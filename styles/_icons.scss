@@ -1,0 +1,35 @@
+//-------------------------------------------- Font icons
+
+//---------------------- Declare font
+
+// Note: https://github.com/FontCustom/fontcustom/issues/186
+
+@include font-face('icons', $font-path + 'icons/icons');
+
+//---------------------- Icon list
+
+$icons: (
+	facebook: "\f101",
+	googleplus: "\f102",
+	twitter: "\f100",
+);
+
+//---------------------- Apply icons
+
+@mixin icon($position: before, $icon: false, $styles: true) {
+	@if $position == both {
+		$position: 'before, &:after';
+	}
+	&:#{$position} {
+		@if $icon {
+			content: "#{map-get($icons, $icon)}";
+		}
+		@if $styles {
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-family: 'icons';
+		}
+		@content;
+	}
+}

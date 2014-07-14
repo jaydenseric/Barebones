@@ -1,0 +1,33 @@
+//-------------------------------------------- Font icons
+
+//---------------------- Declare font
+
+// Note: https://github.com/FontCustom/fontcustom/issues/186
+
+@include font-face('<%= font_name %>', $font-path + '<%= font_name %>/<%= font_name %>');
+
+//---------------------- Icon list
+
+$icons: (<% @glyphs.each do |name, value| %>
+	<%= name.to_s %>: "\<%= value[:codepoint].to_s(16) %>",<% end %>
+);
+
+//---------------------- Apply icons
+
+@mixin icon($position: before, $icon: false, $styles: true) {
+	@if $position == both {
+		$position: 'before, &:after';
+	}
+	&:#{$position} {
+		@if $icon {
+			content: "#{map-get($icons, $icon)}";
+		}
+		@if $styles {
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-family: '<%= font_name %>';
+		}
+		@content;
+	}
+}

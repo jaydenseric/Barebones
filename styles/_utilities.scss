@@ -1,0 +1,53 @@
+//-------------------------------------------- Bourbon mixins
+
+// Docs: http://bourbon.io
+
+@import 'bourbon/bourbon';
+
+//-------------------------------------------- Media queries
+
+@mixin breakpoint($size, $direction: min, $property: width) {
+	@if $ie-version == 8 {
+		@if $size <= $old-ie-width and $direction == min and $property == width {
+			@content;
+		}
+	}
+	@else {
+		@media (#{$direction}-#{$property}: $size) {
+			@content;
+		}
+	}
+}
+
+//-------------------------------------------- Old and new browsers
+
+//---------------------- Old IE only styles
+
+@mixin old-ie($version: all) {
+	@if $version == $ie-version or ($version == all and $ie-version != false) {
+		@content;
+	}
+}
+
+//---------------------- Modern browser only styles
+
+@mixin modern-browsers {
+	@if not $ie-version {
+		@content;
+	}
+}
+
+//-------------------------------------------- Automatic layering
+
+@mixin layer($name) {
+	$index: index($layers, $name);
+	@if $index {
+		z-index: $base-layer-index + $index;
+	} @else {
+		@warn "No layer named `#{$name}` exists in the layer list.";
+	}
+}
+
+//-------------------------------------------- Font icons
+
+@import 'icons';

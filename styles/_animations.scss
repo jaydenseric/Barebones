@@ -1,0 +1,9 @@
+//-------------------------------------------- Animation keyframes
+
+// Docs: http://bourbon.io/docs/#keyframes
+
+@include keyframes(fadeIn) {
+	from {
+		opacity: 0;
+	}
+}
