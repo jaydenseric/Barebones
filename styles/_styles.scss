@@ -68,7 +68,7 @@ img {
 // An example component.
 
 .social-media-links {
-	margin: 15px;
+	margin: 1rem;
 	@include animation(fadeIn 2.5s);
 	@include breakpoint($social-breakpoint-1) {
 		margin: 5%;
@@ -82,12 +82,12 @@ img {
 	}
 	a {
 		display: block;
-		padding: 1em;
+		padding: 1rem;
 		color: white;
 		@include icon {
 			display: inline-block;
-			width: 1.5em;
-			margin-right: .5em;
+			width: 1.5rem;
+			margin-right: .5rem;
 			text-align: center;
 		}
 		@include breakpoint($social-breakpoint-2) {
