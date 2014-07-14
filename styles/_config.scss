@@ -12,8 +12,8 @@ $helvetica-neue:					'Helvetica Neue', Arial, sans-serif;
 
 $font-path:							'../fonts/';
 $image-path:						'../images/';
-$global-container-max-width:		935px;
-$old-ie-width:						$global-container-max-width + 100px;
+$global-container-max-width:		58rem;
+$old-ie-width:						$global-container-max-width + 6rem;
 $base-layer-index:					99;
 $layers:							();
 $global-transition-duration:		.3s;
@@ -22,5 +22,5 @@ $global-transition-duration:		.3s;
 
 // An example component.
 
-$social-breakpoint-1:				450px;
-$social-breakpoint-2:				800px;
+$social-breakpoint-1:				28rem;
+$social-breakpoint-2:				50rem;
