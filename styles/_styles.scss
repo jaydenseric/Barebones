@@ -7,6 +7,13 @@ html {
 	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	@include box-sizing(border-box);
+}
+* {
+	&:before, 
+	&:after {
+		box-sizing(inherit);
+	}
 }
 body {
 	margin: 0;
