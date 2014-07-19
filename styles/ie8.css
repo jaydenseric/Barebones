@@ -1,1 +1,81 @@
-@font-face{font-family:"icons";font-weight:normal;font-style:normal;src:url("../fonts/icons/icons.eot");src:url("../fonts/icons/icons.eot?#iefix") format("embedded-opentype"),url("../fonts/icons/icons.woff") format("woff"),url("../fonts/icons/icons.ttf") format("truetype"),url("../fonts/icons/icons.svg#icons") format("svg")}@-webkit-keyframes fadeIn{from{opacity:0}}@-moz-keyframes fadeIn{from{opacity:0}}@keyframes fadeIn{from{opacity:0}}html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}body{margin:0;font-size:16px;font-family:"Helvetica Neue",Arial,sans-serif;min-width:1035px}h1,h2,h3,h4,p,ul,ol,figure,button{margin:0;padding:0}li{display:block}h1,h2,h3,h4,p{font-size:inherit}a,button{color:inherit;-webkit-transition:0.3s;-moz-transition:0.3s;transition:0.3s}a{text-decoration:none}button{overflow:visible;border:0;font:inherit;background:none;cursor:pointer;-webkit-font-smoothing:inherit}button:focus{outline:0}img{max-width:100%;height:auto;border:0}.social-media-links{margin:15px;-webkit-animation:fadeIn 2.5s;-moz-animation:fadeIn 2.5s;animation:fadeIn 2.5s;margin:5%;overflow:hidden}.social-media-links li{float:left;width:33.33333%}.social-media-links a{display:block;padding:1em;color:white;font-size:150%}.social-media-links a:before{speak:none;font-style:normal;font-weight:normal;font-family:'icons';display:inline-block;width:1.5em;margin-right:.5em;text-align:center}.social-media-links a[href*="facebook.com"]{background-color:#3b5998}.social-media-links a[href*="facebook.com"]:before{content:"\f101"}.social-media-links a[href*="twitter.com"]{background-color:#00aced}.social-media-links a[href*="twitter.com"]:before{content:"\f100"}.social-media-links a[href*="google.com"]{background-color:#dd4b39}.social-media-links a[href*="google.com"]:before{content:"\f102"}
+/*
+Syntax error: File to import not found or unreadable: icons.
+              Load paths:
+                /Users/jaydenseric/Sites/barebones/repo (DEPRECATED)
+                /Users/jaydenseric/Sites/barebones/repo/styles
+        on line 53 of styles/_utilities.scss
+        from line 2 of styles/_project.scss
+        from line 2 of styles/ie8.scss
+
+Backtrace:
+styles/_utilities.scss:53
+styles/_project.scss:2
+styles/ie8.scss:2
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/import_node.rb:66:in `rescue in import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/import_node.rb:45:in `import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/import_node.rb:28:in `imported_file'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/import_node.rb:37:in `css_import?'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:283:in `visit_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:121:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:152:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:297:in `block (2 levels) in visit_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:297:in `map'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:297:in `block in visit_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:88:in `block in with_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:121:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:88:in `with_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:294:in `visit_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:121:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:152:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:297:in `block (2 levels) in visit_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:297:in `map'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:297:in `block in visit_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:88:in `block in with_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:121:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:88:in `with_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:294:in `visit_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:121:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:152:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/base.rb:52:in `map'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:161:in `block in visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:160:in `visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:180:in `visit_root'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:151:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/root_node.rb:20:in `render'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/engine.rb:274:in `render'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/plugin/compiler.rb:378:in `update_stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/plugin/compiler.rb:186:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/plugin/compiler.rb:357:in `on_file_changed'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.9/lib/sass/plugin/compiler.rb:250:in `block in watch'
+/Library/Ruby/Gems/2.0.0/gems/listen-2.7.9/lib/listen/listener.rb:276:in `call'
+/Library/Ruby/Gems/2.0.0/gems/listen-2.7.9/lib/listen/listener.rb:276:in `_process_changes'
+/Library/Ruby/Gems/2.0.0/gems/listen-2.7.9/lib/listen/listener.rb:233:in `block in _wait_for_changes'
+/Library/Ruby/Gems/2.0.0/gems/listen-2.7.9/lib/listen/listener.rb:216:in `loop'
+/Library/Ruby/Gems/2.0.0/gems/listen-2.7.9/lib/listen/listener.rb:216:in `_wait_for_changes'
+/Library/Ruby/Gems/2.0.0/gems/listen-2.7.9/lib/listen/listener.rb:312:in `block in _start_wait_thread'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: File to import not found or unreadable: icons.\A               Load paths:\A                 /Users/jaydenseric/Sites/barebones/repo (DEPRECATED)\A                 /Users/jaydenseric/Sites/barebones/repo/styles\A         on line 53 of styles/_utilities.scss\A         from line 2 of styles/_project.scss\A         from line 2 of styles/ie8.scss"; }
