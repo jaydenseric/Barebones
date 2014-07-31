@@ -1,16 +1,15 @@
-![Barebones logo](http://jaydenseric.com/shared/barebones-logo.svg)
+# ![Barebones logo](http://jaydenseric.com/shared/barebones-logo.svg)
 
-The barebones needed to get started on a modern front end; an efficient and flexible alternative to the [HTML5 Boilerplate](http://html5boilerplate.com).
+The barebones needed to get started on a modern front end. An efficient and powerfull alternative to the [HTML5 Boilerplate](http://html5boilerplate.com).
 
-The aim of Barebones is to include just the things you will need for every single responsive project. Extend it to meet your specific requirements.
+Only the things needed in every responsive project are included. Extend these essentials to meet your specific requirements.
 
 Barebones is for you if you:
 
 - Do everything responsively.
 - Regularly use font icons and SVG.
-- Like to do your own groovy things with Sass.
-- Like a logical project structure and detest bloat.
-- Would like to easily apply hacks isolated to specific IE versions.
+- Like to do groovy things with Sass.
+- Support IE8 and would like to easily target specific IE versions for fixes.
 
 ## Sass
 
