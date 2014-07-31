@@ -39,7 +39,7 @@ Media queries are mobile-first. Develop a component's mobile styles and then at 
 
 Define breakpoint variables in `_config.scss` for use in `_styles.scss` with the `breakpoint` mixin. This mixin can handle horizontal or vertical breakpoints, responding up or down.
 
-The `breakpoint` mixin handles media query fallbacks for IE8 automatically, displaying the layout adapted to the size specified in `_config.scss` under `$old-ie-width`.
+The `breakpoint` mixin handles media query fallbacks for IE8 automatically, displaying the layout adapted to the size specified in `_config.scss` under `$no-media-queries-width` and `$no-media-queries-height`.
 
 #### Example
 

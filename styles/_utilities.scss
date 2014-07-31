@@ -8,11 +8,16 @@
 
 @mixin breakpoint($size, $direction: min, $property: width) {
 	@if $ie-version == 8 {
-		@if $size <= $old-ie-width and $direction == min and $property == width {
+		@if $direction == min and $property == width and $size <= $no-media-queries-width {
+			@content;
+		} @else if $direction == max and $property == width and $size >= $no-media-queries-width {
+			@content;
+		} @else if $direction == min and $property == height and $size <= $no-media-queries-height {
+			@content;
+		} @else if $direction == max and $property == height and $size >= $no-media-queries-height {
 			@content;
 		}
-	}
-	@else {
+	} @else {
 		@media (#{$direction}-#{$property}: $size) {
 			@content;
 		}
