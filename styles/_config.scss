@@ -13,6 +13,6 @@ $image-path:						'../images/';
 $global-contained-width:			935px;
 $no-media-queries-width:			$global-contained-width + 100px;
 $no-media-queries-height:			$no-media-queries-width * (9 / 16); // 16:9 aspect ratio
+$global-transition-duration:		.3s;
 $base-layer-index:					99;
 $layers:							();
-$global-transition-duration:		.3s;
