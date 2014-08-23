@@ -1,16 +1,18 @@
 //-------------------------------------------- Font icons
 
-//---------------------- Declare font
-
-// Note: https://github.com/FontCustom/fontcustom/issues/186
-
-@include font-face('<%= font_name %>', $font-path + '<%= font_name %>/<%= font_name %>');
-
 //---------------------- Icon list
 
 $icons: (<% @glyphs.each do |name, value| %>
 	<%= name.to_s %>: "\<%= value[:codepoint].to_s(16) %>",<% end %>
 );
+
+//---------------------- Declare font
+
+// Note: https://github.com/FontCustom/fontcustom/issues/186
+
+@if length($icons) != 0 {
+	@include font-face('<%= font_name %>', $font-path + '<%= font_name %>/<%= font_name %>');
+}
 
 //---------------------- Apply icons
 
