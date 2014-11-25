@@ -1,0 +1,5 @@
+//-------------------------------------------- Font icon list
+
+$icon-list: (<% @glyphs.each do |name, value| %>
+	<%= name.to_s %>: "\<%= value[:codepoint].to_s(16) %>",<% end %>
+);

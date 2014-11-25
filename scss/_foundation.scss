@@ -1,4 +1,4 @@
-//-------------------------------------------- Foundational
+//-------------------------------------------- Foundation
 
 // Reference: http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation
 
@@ -7,18 +7,23 @@ html {
 	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	-webkit-tap-highlight-color: transparent;
 }
 body {
 	margin: 0;
-	font-size: 16px/1 $sans-serif;
+	font: 16px/1 $sans-serif;
 	@include old-ie(8) {
 		min-width: $no-media-queries-width;
 	}
+}
+iframe {
+	border: 0;
 }
 h1,
 h2,
 h3,
 h4,
+h5,
 p,
 ul,
 ol,
@@ -34,8 +39,19 @@ h1,
 h2,
 h3,
 h4,
+h5,
 p {
 	font-size: inherit;
+}
+strong {
+	font-weight: bold;
+}
+sup {
+	position: relative;
+	top: -.5em;
+	font-size: 65%;
+	line-height: 0;
+	vertical-align: baseline;
 }
 a,
 button {
@@ -46,9 +62,10 @@ a {
 	text-decoration: none;
 }
 button {
-	overflow: visible; // Fix all IE versions
+	overflow: visible;
 	border: 0;
 	font: inherit;
+	letter-spacing: inherit;
 	background: none;
 	cursor: pointer;
 	-webkit-font-smoothing: inherit;
@@ -56,8 +73,12 @@ button {
 		outline: 0;
 	}
 }
+::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
 img {
 	max-width: 100%;
 	height: auto;
-	border: 0; // Fix all IE versions when nested in links
+	border: 0;
 }

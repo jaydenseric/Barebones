@@ -3,8 +3,10 @@
 # https://github.com/FontCustom/fontcustom#configuration
 font_name: icons
 no_hash: true
-autowidth: true
+input:
+  vectors: vectors
+  templates: templates
 output:
-  fonts: ../
-  _icons.scss: ../../../styles
+  fonts: ../fonts/icons
+  _icons.scss: ../scss
 templates: [_icons.scss]

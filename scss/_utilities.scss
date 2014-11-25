@@ -6,6 +6,8 @@
 
 //-------------------------------------------- Media queries
 
+//---------------------- Media query with old IE fallback
+
 @mixin breakpoint($size, $direction: min, $property: width) {
 	@if $ie-version == 8 {
 		@if $direction == min and $property == width and $size <= $no-media-queries-width {
@@ -24,7 +26,19 @@
 	}
 }
 
-//-------------------------------------------- Old and new browsers
+//---------------------- Breakpoint range
+
+// Note: Sass conveniently combines nested media queries into one.
+
+@mixin breakpoint-range($size-min, $size-max, $property: width) {
+	@include breakpoint($size-min, min, $property) {
+		@include breakpoint($size-max, max, $property) {
+			@content;
+		}
+	}
+}
+
+//-------------------------------------------- Old & new browsers
 
 //---------------------- Old IE only styles
 
@@ -55,4 +69,42 @@
 
 //-------------------------------------------- Font icons
 
-@import 'icons';
+@mixin icon($position: before, $icon: false, $styles: true) {
+	@if $position == both {
+		$position: 'before, &:after';
+	}
+	&:#{$position} {
+		@if $icon {
+			content: "#{map-get($icon-list, $icon)}";
+		}
+		@if $styles {
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-family: $icons;
+		}
+		@content;
+	}
+}
+
+//-------------------------------------------- Declares custom fonts
+
+@mixin font($font-family-stack, $file-path, $weight: normal, $style: normal, $old-ie-declaration: true) {
+	$font-family: nth($font-family-stack, 1);
+	@if $ie-version != 8 {
+		@font-face {
+			font-family: $font-family;
+			font-style: $style;
+			font-weight: $weight;
+			src: url($file-path + '.woff') format('woff'), url($file-path + '.ttf') format('truetype');
+		}
+	}
+	@if $old-ie-declaration {
+		@include old-ie(8) {
+			@font-face {
+			  font-family: $font-family;
+			  src: url($file-path + '.eot');
+			}
+		}
+	}
+}
