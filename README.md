@@ -39,7 +39,7 @@ sass --watch scss:css --style compressed --sourcemap=none
 
 Most Sass variables should be set in `_config.scss` for convenience and to ensure their availability throughout the project.
 
-The [Bourbon mixin library](http://bourbon.io) and more are available from `_utilities.scss`. Add more of your own here as required.
+The [Bourbon mixin library](http://bourbon.io) and other handy mixins are available from `_utilities.scss`. Add more of your own here as required.
 
 Declare your fonts in `_fonts.scss`.
 
