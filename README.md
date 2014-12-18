@@ -105,7 +105,7 @@ body > header {
 
 ### Specify IE9 or modern browser only styles
 
-IE9 gets *styles-ie9.css* via HTML conditional comments while everything else runs *styles.css*. The Sass framework compliles relevent CSS to each of these files.
+IE9 gets *main-ie9.css* via HTML conditional comments while everything else runs *main.css*. The Sass framework compliles relevent CSS to each of these files.
 
 The `$ie9` variable is available anywhere in your SCSS to apply hacks and fixes.
 
@@ -124,7 +124,7 @@ In *_styles.scss*:
 
 ### Add IE9 only JS polyfills & fixes
 
-IE9 runs *ie9.js* before *scripts.js* via HTML conditional comments. Modern browsers do not download this file.
+IE9 runs *ie9.js* before *main.js* via HTML conditional comments. Modern browsers do not download this file.
 
 #### Example
 
