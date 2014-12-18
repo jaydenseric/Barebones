@@ -1,32 +1,20 @@
 //-------------------------------------------- Bourbon mixins
 
-// Docs: http://bourbon.io
+// See: http://bourbon.io
 
 @import 'bourbon/bourbon';
 
 //-------------------------------------------- Media queries
 
-//---------------------- Media query with old IE fallback
+//---------------------- Sets a breakpoint
 
 @mixin breakpoint($size, $direction: min, $property: width) {
-	@if $ie-version == 8 {
-		@if $direction == min and $property == width and $size <= $no-media-queries-width {
-			@content;
-		} @else if $direction == max and $property == width and $size >= $no-media-queries-width {
-			@content;
-		} @else if $direction == min and $property == height and $size <= $no-media-queries-height {
-			@content;
-		} @else if $direction == max and $property == height and $size >= $no-media-queries-height {
-			@content;
-		}
-	} @else {
-		@media (#{$direction}-#{$property}: $size) {
-			@content;
-		}
+	@media (#{$direction}-#{$property}: $size) {
+		@content;
 	}
 }
 
-//---------------------- Breakpoint range
+//---------------------- Sets a breakpoint range
 
 // Note: Sass conveniently combines nested media queries into one.
 
@@ -38,25 +26,9 @@
 	}
 }
 
-//-------------------------------------------- Old & new browsers
+//-------------------------------------------- Sets a layer
 
-//---------------------- Old IE only styles
-
-@mixin old-ie($version: all) {
-	@if $version == $ie-version or ($version == all and $ie-version != false) {
-		@content;
-	}
-}
-
-//---------------------- Modern browser only styles
-
-@mixin modern-browsers {
-	@if not $ie-version {
-		@content;
-	}
-}
-
-//-------------------------------------------- Automatic layering
+// Manage layers in the config file.
 
 @mixin layer($name) {
 	$index: index($layers, $name);
@@ -67,7 +39,7 @@
 	}
 }
 
-//-------------------------------------------- Font icons
+//-------------------------------------------- Sets a font icon
 
 @mixin icon($position: before, $icon: false, $styles: true) {
 	@if $position == both {
@@ -87,24 +59,13 @@
 	}
 }
 
-//-------------------------------------------- Declares custom fonts
+//-------------------------------------------- Declares a custom font
 
-@mixin font($font-family-stack, $file-path, $weight: normal, $style: normal, $old-ie-declaration: true) {
-	$font-family: nth($font-family-stack, 1);
-	@if $ie-version != 8 {
-		@font-face {
-			font-family: $font-family;
-			font-style: $style;
-			font-weight: $weight;
-			src: url($file-path + '.woff') format('woff'), url($file-path + '.ttf') format('truetype');
-		}
-	}
-	@if $old-ie-declaration {
-		@include old-ie(8) {
-			@font-face {
-			  font-family: $font-family;
-			  src: url($file-path + '.eot');
-			}
-		}
+@mixin font($font-family-stack, $file-path, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: nth($font-family-stack, 1);
+		font-style: $style;
+		font-weight: $weight;
+		src: url($file-path + '.woff') format('woff'), url($file-path + '.ttf') format('truetype');
 	}
 }

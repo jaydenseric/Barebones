@@ -12,9 +12,6 @@ html {
 body {
 	margin: 0;
 	font: 16px/1 $sans-serif;
-	@include old-ie(8) {
-		min-width: $no-media-queries-width;
-	}
 }
 iframe {
 	border: 0;
