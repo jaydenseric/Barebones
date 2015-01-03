@@ -52,7 +52,7 @@ Place your main styles in *_styles.scss*, tapping into all the above.
 
 Font icons are handled using a special [Font Custom](https://github.com/FontCustom/fontcustom) implementation. Refer to the article [*"Font icons like a boss with Sass & Font Custom"*](http://jaydenseric.com/blog/font-icons-like-a-boss-with-sass-and-font-custom) for detailed usage instructions.
 
-Manage all your project's font icons in */fontcustom/vectors/* as nicely named SVG files. Add icons to this folder to have your fonts magically rebuilt in */fonts/icons/* and *_icons.scss* automatically set up for you to start using the icons in *_styles.scss* via their nice names using the `icon($position: before, $icon: false, $styles: true)` utility mixin; without touching your markup or dealing with non-semantic class names.
+Manage all your project's font icons in */fontcustom/vectors/* as nicely named SVG files. Add icons to this folder to have the font magically recompiled and base64 embedded in the CSS, automatically set up for you to start using the icons in *_styles.scss* via their nice names using the `icon($position: before, $icon: false, $styles: true)` utility mixin; without touching your markup or dealing with non-semantic class names.
 
 #### Example
 
