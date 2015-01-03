@@ -1,5 +1,5 @@
 //-------------------------------------------- Font-face declarations
 
-//---------------------- Icons
+//---------------------- Icon font
 
-@include font($icons, $font-path + 'icons/icons');
+@import 'icon-font';

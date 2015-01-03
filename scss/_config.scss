@@ -2,14 +2,14 @@
 
 
 
-//-------------------------------------------- Font icon list
-
-@import 'icons';
-
 //-------------------------------------------- Font stacks
 
-$icons:									Icons;
 $sans-serif:							'Helvetica Neue', Arial, sans-serif;
+$icons:									Icons;
+
+//-------------------------------------------- Font icons
+
+@import 'font-icons';
 
 //-------------------------------------------- Foundational
 

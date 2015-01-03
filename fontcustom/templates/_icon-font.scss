@@ -1,0 +1,6 @@
+@font-face {
+    font-family: $icons;
+    src: url(<%= woff_data_uri %>) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -47,7 +47,7 @@
 	}
 	&:#{$position} {
 		@if $icon {
-			content: "#{map-get($icon-list, $icon)}";
+			content: "#{map-get($font-icons, $icon)}";
 		}
 		@if $styles {
 			speak: none;
