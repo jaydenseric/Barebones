@@ -1,12 +1,11 @@
 # Font Custom config
-# http://jaydenseric.com/blog/font-icons-like-a-boss-with-sass-and-font-custom
-# https://github.com/FontCustom/fontcustom#configuration
 font_name: icons
 no_hash: true
 input:
   vectors: vectors
   templates: templates
+templates: [_font-icons.scss, _icon-font.scss]
 output:
-  fonts: ../fonts/icons
-  _icons.scss: ../scss
-templates: [_icons.scss]
+  fonts: fonts
+  _font-icons.scss: ../scss
+  _icon-font.scss: ../scss
