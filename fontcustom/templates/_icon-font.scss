@@ -1,5 +1,5 @@
 @font-face {
-    font-family: $icons;
+    font-family: nth($icons, 1);
     src: url(<%= woff_data_uri %>) format('woff');
     font-weight: normal;
     font-style: normal;
