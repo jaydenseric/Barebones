@@ -53,14 +53,3 @@
 		@content;
 	}
 }
-
-//-------------------------------------------- Declares a custom font
-
-@mixin font($font-family-stack, $file-path, $weight: normal, $style: normal) {
-	@font-face {
-		font-family: nth($font-family-stack, 1);
-		font-style: $style;
-		font-weight: $weight;
-		src: url($file-path + '.woff') format('woff'), url($file-path + '.ttf') format('truetype');
-	}
-}
