@@ -30,13 +30,8 @@
 
 // Manage layers in the config file.
 
-@mixin layer($name) {
-	$index: index($layers, $name);
-	@if $index {
-		z-index: $base-layer-index + $index;
-	} @else {
-		@warn "No layer named `#{$name}` exists in the layer list.";
-	}
+@mixin layer($stack, $name, $base-index: 0) {
+	z-index: $base-index + index($stack, $name)
 }
 
 //-------------------------------------------- Sets a font icon
