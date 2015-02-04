@@ -4,6 +4,14 @@
 
 @import 'bourbon/bourbon';
 
+//-------------------------------------------- Gets a layer's z-index
+
+// Manage layers in the config file.
+
+@function layer($stack, $name, $base-index: 0) {
+	@return $base-index + index($stack, $name);
+}
+
 //-------------------------------------------- Media queries
 
 //---------------------- Sets a breakpoint
@@ -24,14 +32,6 @@
 			@content;
 		}
 	}
-}
-
-//-------------------------------------------- Sets a layer
-
-// Manage layers in the config file.
-
-@mixin layer($stack, $name, $base-index: 0) {
-	z-index: $base-index + index($stack, $name)
 }
 
 //-------------------------------------------- Sets a font icon

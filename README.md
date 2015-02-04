@@ -103,9 +103,43 @@ body > header {
 }
 ```
 
+### Set z-index layers
+
+`z-index` layers can be named and managed as lists within the config, using the `layer($stack, $name, $base-index: 0)` function. Layer lists stack from bottom to top. The optional `$base-index` parameter can be used to layer collections of layers.
+
+#### Example
+
+In *_config.scss*:
+
+```scss
+//-------------------------------------------- Parallax scene
+
+$scene-layers:	(
+					sky,
+					mountains,
+					person
+				);
+```
+
+In *_styles.scss*:
+
+```scss
+//-------------------------------------------- Parallax scene
+
+.sky {
+	z-index: layer($scene-layers, sky);
+}
+.mountains {
+	z-index: layer($scene-layers, mountains);
+}
+.person {
+	z-index: layer($scene-layers, person);
+}
+```
+
 ### Specify IE9 or modern browser only styles
 
-IE9 gets *main-ie9.css* via HTML conditional comments while everything else runs *main.css*. The Sass framework compliles relevent CSS to each of these files.
+IE9 gets *main-ie9.css* via HTML conditional comments while everything else runs *main.css*. The Sass framework compiles relevant CSS to each of these files.
 
 The `$ie9` variable is available anywhere in your SCSS to apply hacks and fixes.
 
