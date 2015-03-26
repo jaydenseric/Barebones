@@ -1,3 +1,4 @@
 .fontcustom-manifest.json
 fontcustom/fonts
 .sass-cache
+.DS_Store
