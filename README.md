@@ -4,39 +4,29 @@
 
 The barebones needed to get started on a modern front end. Only the things needed in every responsive project are included; ready to extend as required. A Sassy and streamlined alternative to the [HTML5 Boilerplate](http://html5boilerplate.com).
 
-- No opinionated bloat or pre-developed components.
-- Logical Sass framework.
+- Minimalist Sass framework.
 - Super efficient font icons workflow.
-- Minimal HTTP requests.
+- Write standard CSS without prefixes thanks to [Autoprefixer](https://github.com/nDmitry/grunt-autoprefixer).
+- No opinionated bloat or pre-developed components.
+- Easy compilation via Grunt, setup purely via NPM.
 
 ## Browser support
 
 All modern browsers and IE9+ are supported in the [*master* branch](https://github.com/jaydenseric/Barebones/tree/master). Checkout the [*ie8-support* branch](https://github.com/jaydenseric/Barebones/tree/ie8-support) for added IE8 support and documentation.
 
-## Requirements
+## Compilation
 
-- [Sass](https://github.com/sass/sass).
-- [Font Custom](https://github.com/FontCustom/fontcustom).
+1. Install [Node.js](https://nodejs.org).
+2. In the repo, run `npm install`.
+3. Run `grunt` for a full compilation or `grunt watch` to automatically compile relevant assets when specific files change.
 
-## Getting started
-
-### Compile font icon setup
-
-```bash
-cd fontcustom; fontcustom watch
-```
-
-### Compile SCSS to CSS
-
-```bash
-sass --watch scss:css --style compressed --sourcemap=none
-```
+Node.js is only used for compilation during development and is not a server requirement.
 
 ## Sass structure
 
 Most Sass variables should be set in *_config.scss* for convenience and to ensure their availability throughout the project.
 
-The [Bourbon mixin library](http://bourbon.io) and other handy mixins are available from *_utilities.scss*. Add more of your own here as required.
+Handy mixins are available from *_utilities.scss*. Add more of your own here as required.
 
 Declare your fonts in *_fonts.scss*.
 
@@ -46,17 +36,25 @@ A simple [CSS foundation](http://jaydenseric.com/blog/forget-normalize-or-resets
 
 Place your main styles in *_styles.scss*, tapping into all the above.
 
+## Automatic CSS vendor prefixes
+
+Remember not to use vendor prefixes in your Sass, [Autoprefixer](https://github.com/nDmitry/grunt-autoprefixer) parses the compiled Sass and adds vendor-prefixed CSS properties using the [Can I Use](http://caniuse.com) database. You can [adjust the browsers supported](https://github.com/postcss/autoprefixer#browsers) in *Gruntfile.js*.
+
 ## How-to
 
 ### Create & use font icons
 
-Font icons are handled using a special [Font Custom](https://github.com/FontCustom/fontcustom) implementation. Refer to the article [*"Font icons like a boss with Sass & Font Custom"*](http://jaydenseric.com/blog/font-icons-like-a-boss-with-sass-and-font-custom) for detailed usage instructions.
+Font icons are handled using an [SVG to webfont converter](https://github.com/sapegin/grunt-webfont) for Grunt.
 
-Manage all your project's font icons in */fontcustom/vectors/* as nicely named SVG files. Add icons to this folder to have the font magically recompiled and base64 embedded in the CSS, automatically set up for you to start using the icons in *_styles.scss* via their nice names using the `icon($position: before, $icon: false, $styles: true)` utility mixin; without touching your markup or dealing with non-semantic class names.
+1. Add an optimised SVG file named after the icon to */icons/vectors/*.
+2. If `grunt watch` was running (run `grunt` if you forgot) the icon font is automatically updated in the Sass as a Base64 WOFF data URI, along with a new unicode character map.
+3. Use the `icon($position: before, $icon: false, $styles: true)` mixin in *_styles.scss* to add the new icon wherever you like. Use the SVG filename without the extension for the `$icon` parameter. Easy!
+
+See [*"Fun with Sass & font icons"*](http://jaydenseric.com/blog/fun-with-sass-and-font-icons) to learn more about the mixin.
 
 #### Example
 
-The icon */fontcustom/vectors/menu.svg* is included by default. First make sure Font Custom and Sass are compiling (see ***Getting started***), then in *_styles.scss*:
+The icon *menu.svg* is included by default. First make sure to run `grunt` (see ***Compilation***), then in *_styles.scss*:
 
 ```scss
 .menu {
