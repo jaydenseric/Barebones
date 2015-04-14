@@ -4,11 +4,11 @@
 
 The barebones needed to get started on a modern front end. Only the things needed in every responsive project are included; ready to extend as required. A Sassy and streamlined alternative to the [HTML5 Boilerplate](http://html5boilerplate.com).
 
-- Minimalist Sass framework.
+- Minimalist [Sass](http://sass-lang.com) framework.
 - Super efficient font icons workflow.
-- Write standard CSS without prefixes thanks to [Autoprefixer](https://github.com/nDmitry/grunt-autoprefixer).
+- Write standard CSS without prefixes thanks to [Autoprefixer](https://github.com/postcss/autoprefixer).
 - No opinionated bloat or pre-developed components.
-- Easy compilation via Grunt, setup purely via NPM.
+- Easy compilation via [Gulp](http://gulpjs.com), setup purely via [NPM](https://npmjs.com).
 
 ## Browser support
 
@@ -16,9 +16,10 @@ All modern browsers and IE9+ are supported in the [*master* branch](https://gith
 
 ## Compilation
 
-1. Install [Node.js](https://nodejs.org).
-2. In the repo, run `npm install`.
-3. Run `grunt` for a full compilation or `grunt watch` to automatically compile relevant assets when specific files change.
+1. Ensure [Node.js](https://nodejs.org) is installed.
+2. Ensure [Gulp](http://gulpjs.com) is installed: `npm install --global gulp`.
+3. In the repo, run `npm install`.
+4. Run `gulp` for a full compilation or `gulp watch` to automatically compile relevant assets when specific files change.
 
 Node.js is only used for compilation during development and is not a server requirement.
 
@@ -38,23 +39,23 @@ Place your main styles in *_styles.scss*, tapping into all the above.
 
 ## Automatic CSS vendor prefixes
 
-Remember not to use vendor prefixes in your Sass, [Autoprefixer](https://github.com/nDmitry/grunt-autoprefixer) parses the compiled Sass and adds vendor-prefixed CSS properties using the [Can I Use](http://caniuse.com) database. You can [adjust the browsers supported](https://github.com/postcss/autoprefixer#browsers) in *Gruntfile.js*.
+Remember not to use vendor prefixes in your Sass, [Autoprefixer](https://github.com/postcss/autoprefixer) parses the compiled Sass and adds vendor-prefixed CSS properties using the [Can I Use](http://caniuse.com) database. You can [adjust the browsers supported](https://github.com/postcss/autoprefixer#browsers) in *gulpfile.js*.
 
 ## How-to
 
 ### Create & use font icons
 
-Font icons are handled using an [SVG to webfont converter](https://github.com/sapegin/grunt-webfont) for Grunt.
+Adding and using custom font icons is a breeze thanks to Gulp.
 
 1. Add an optimised SVG file named after the icon to */icons/vectors/*.
-2. If `grunt watch` was running (run `grunt` if you forgot) the icon font is automatically updated in the Sass as a Base64 WOFF data URI, along with a new unicode character map.
+2. If `gulp watch` was running (run `gulp` if you forgot) the icon font is automatically updated in the Sass as a Base64 WOFF data URI, along with a new unicode character map.
 3. Use the `icon($position: before, $icon: false, $styles: true)` mixin in *_styles.scss* to add the new icon wherever you like. Use the SVG filename without the extension for the `$icon` parameter. Easy!
 
 See [*"Fun with Sass & font icons"*](http://jaydenseric.com/blog/fun-with-sass-and-font-icons) to learn more about the mixin.
 
 #### Example
 
-The icon *menu.svg* is included by default. First make sure to run `grunt` (see ***Compilation***), then in *_styles.scss*:
+The icon *menu.svg* is included by default. First make sure to run `gulp` (see ***Compilation***), then in *_styles.scss*:
 
 ```scss
 .menu {
