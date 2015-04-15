@@ -47,7 +47,7 @@ Remember not to use vendor prefixes in your Sass, [Autoprefixer](https://github.
 
 Adding and using custom font icons is a breeze thanks to Gulp.
 
-1. Add an optimised SVG file named after the icon to */icons/vectors/*.
+1. Add an optimized SVG file named after the icon to */icons/vectors/*.
 2. If `gulp watch` was running (run `gulp` if you forgot) the icon font is automatically updated in the Sass as a Base64 WOFF data URI, along with a new unicode character map.
 3. Use the `icon($position: before, $icon: false, $styles: true)` mixin in *_styles.scss* to add the new icon wherever you like. Use the SVG filename without the extension for the `$icon` parameter. Easy!
 
