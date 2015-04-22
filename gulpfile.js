@@ -51,7 +51,10 @@ gulp.task('icons', function() {
 
 gulp.task('styles', function() {
 	gulp.src(config.styles.SCSSPath + '/**/*.scss')
-		.pipe(sass({ outputStyle: 'compressed' }))
+		.pipe(sass({
+			errLogToConsole: true,
+			outputStyle: 'compressed'
+		}))
 		.pipe(autoprefixer({
 			browsers: ['last 2 versions', 'IE 9'],
 			cascade: false
