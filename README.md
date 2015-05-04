@@ -65,43 +65,6 @@ The icon *menu.svg* is included by default. First make sure to run `gulp` (see *
 }
 ```
 
-### Set responsive breakpoints
-
-Define breakpoint variables in *_config.scss* for use in *_styles.scss* with the `breakpoint($size, $direction: min, $property: width)` mixin. It can handle horizontal or vertical breakpoints, responding up or down. The `$direction` parameter defaults to `min` as it is best practice to develop mobile-first; applying larger styles over the top as the screen size increases.
-
-Take a look at the `breakpoint-range($size-min, $size-max, $property: width)` mixin to set styles that only apply between two breakpoints.
-
-#### Example
-
-In *_config.scss*:
-
-```scss
-//-------------------------------------------- Page header
-
-$header-breakpoint-1:				500px;
-$header-breakpoint-2:				800px;
-$header-vertical-breakpoint-1:		900px;
-```
-
-In *_styles.scss*:
-
-```scss
-//-------------------------------------------- Page header
-
-body > header {
-	padding: 1em;
-	@include breakpoint($header-breakpoint-1) {
-		padding: 3em;
-	}
-	@include breakpoint($header-breakpoint-2) {
-		font-size: 200%;
-		@include breakpoint($header-vertical-breakpoint-1, min, height) {
-			padding: 6em 3em;
-		}
-	}
-}
-```
-
 ### Set z-index layers
 
 `z-index` layers can be named and managed as lists within the config, using the `layer($stack, $name, $base-index: 0)` function. Layer lists stack from bottom to top. The optional `$base-index` parameter can be used to layer stacks of layers.

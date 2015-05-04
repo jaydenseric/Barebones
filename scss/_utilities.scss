@@ -14,28 +14,6 @@
 	@return $base-index + index($stack, $name);
 }
 
-//-------------------------------------------- Media queries
-
-//---------------------- Sets a breakpoint
-
-@mixin breakpoint($size, $direction: min, $property: width) {
-	@media (#{$direction}-#{$property}: $size) {
-		@content;
-	}
-}
-
-//---------------------- Sets a breakpoint range
-
-// Note: Sass conveniently combines nested media queries into one.
-
-@mixin breakpoint-range($size-min, $size-max, $property: width) {
-	@include breakpoint($size-min, min, $property) {
-		@include breakpoint($size-max, max, $property) {
-			@content;
-		}
-	}
-}
-
 //-------------------------------------------- Sets a font icon
 
 @mixin icon($position: before, $icon: false, $styles: true) {
