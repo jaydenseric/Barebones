@@ -74,7 +74,7 @@ The icon *menu.svg* is included by default. First make sure to run `gulp` (see *
 In *_config.scss*:
 
 ```scss
-//-------------------------------------------- Parallax scene
+//------------------------------------------------ Parallax scene
 
 $scene-layers:	(
 					sky,
@@ -86,7 +86,7 @@ $scene-layers:	(
 In *_styles.scss*:
 
 ```scss
-//-------------------------------------------- Parallax scene
+//------------------------------------------------ Parallax scene
 
 .sky {
 	z-index: layer($scene-layers, sky);

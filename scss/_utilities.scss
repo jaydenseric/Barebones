@@ -1,4 +1,4 @@
-//-------------------------------------------- Converts any color to transparent RGBA
+//------------------------------------------------ Converts any color to transparent RGBA
 
 // Useful for avoiding a black tint in color to transparent gradients.
 
@@ -6,7 +6,7 @@
 	@return rgba(red($color), green($color), blue($color), 0);
 }
 
-//-------------------------------------------- Gets a layer's z-index
+//------------------------------------------------ Gets a layer's z-index
 
 // Manage layers in the config file.
 
@@ -14,7 +14,7 @@
 	@return $base-index + index($stack, $name);
 }
 
-//-------------------------------------------- Sets a font icon
+//------------------------------------------------ Sets a font icon
 
 @mixin icon($position: before, $icon: false, $styles: true) {
 	@if $position == both {

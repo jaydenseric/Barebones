@@ -1,4 +1,4 @@
-//-------------------------------------------- Config
+//------------------------------------------------ Config
 
 var config = {
 	icons: {
@@ -11,7 +11,7 @@ var config = {
 	}
 };
 
-//-------------------------------------------- Plugins
+//------------------------------------------------ Plugins
 
 var	gulp				= require('gulp'),
 	autoprefixer		= require('gulp-autoprefixer'),
@@ -22,9 +22,9 @@ var	gulp				= require('gulp'),
 	template			= require('gulp-template'),
 	ttf2woff			= require('gulp-ttf2woff');
 
-//-------------------------------------------- Tasks
+//------------------------------------------------ Tasks
 
-//---------------------- Font icons
+//------------------------ Font icons
 
 gulp.task('icons', function() {
 	gulp.src([config.icons.vectorsPath + '/*.svg'])
@@ -47,7 +47,7 @@ gulp.task('icons', function() {
 		}));
 });
 
-//---------------------- Styles
+//------------------------ Styles
 
 gulp.task('styles', function() {
 	gulp.src(config.styles.SCSSPath + '/**/*.scss')
@@ -62,13 +62,13 @@ gulp.task('styles', function() {
 		.pipe(gulp.dest(config.styles.CSSPath));
 });
 
-//-------------------------------------------- Default tasks
+//------------------------------------------------ Default tasks
 
 gulp.task('default', function() {
 	gulp.start('icons', 'styles');
 });	
 
-//-------------------------------------------- Watch tasks
+//------------------------------------------------ Watch tasks
 
 gulp.task('watch', function() {
 	gulp.watch(config.icons.vectorsPath + '/**/*.svg', ['icons']);
