@@ -14,14 +14,23 @@ The barebones needed to get started on a modern front end. Only the things neede
 
 All modern browsers and IE9+ are supported in the [*master* branch](https://github.com/jaydenseric/Barebones/tree/master). Checkout the [*ie8-support* branch](https://github.com/jaydenseric/Barebones/tree/ie8-support) for added IE8 support and documentation.
 
-## Compilation
+## Building Barebones
+
+Building is handled via command-line and is necessary to generate the icon font, compile Sass to CSS, vendor prefix the CSS, etc.
+
+### Setup
 
 1. Ensure [Node.js](https://nodejs.org) is installed.
 2. Ensure [Gulp](http://gulpjs.com) is installed: `npm install --global gulp`.
 3. In the repo, run `npm install`.
-4. Run `gulp` for a full compilation or `gulp watch` to automatically compile relevant assets when specific files change.
 
-Node.js is only used for compilation during development and is not a server requirement.
+The above are only used for building during development and are not server requirements.
+
+### Build
+
+In the repo, run `gulp` for a full build.
+
+After an initial build you can run `gulp watch` for file changes to trigger intelligent rebuilds.
 
 ## Sass structure
 
@@ -55,7 +64,7 @@ See [*"Fun with Sass & font icons"*](http://jaydenseric.com/blog/fun-with-sass-a
 
 #### Example
 
-The icon *menu.svg* is included by default. First make sure to run `gulp` (see ***Compilation***), then in *_styles.scss*:
+The icon *menu.svg* is included by default. First make sure to run `gulp` (see ***Building Barebones***), then in *_styles.scss*:
 
 ```scss
 .menu {
