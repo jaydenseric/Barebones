@@ -1,17 +1,14 @@
-//------------------------------------------------ Config
+//------------------------------------------------ Paths config
 
-var config = {
-	icons: {
-		vectorsPath: 'icons/vectors',
-		templatesPath: 'icons/templates'
-	},
-	styles: {
-		SCSSPath: 'scss',
-		CSSPath: 'css'
-	}
+var paths = {
+	templates	: 'templates/',
+	icons		: 'icons/',
+	fonts		: 'fonts/',
+	scss		: 'scss/',
+	css			: 'css/'
 };
 
-//------------------------------------------------ Plugins
+//------------------------------------------------ Resources
 
 var	gulp				= require('gulp'),
 	autoprefixer		= require('gulp-autoprefixer'),
@@ -27,50 +24,72 @@ var	gulp				= require('gulp'),
 //------------------------ Font icons
 
 gulp.task('icons', function() {
-	gulp.src([config.icons.vectorsPath + '/*.svg'])
+	gulp.src([paths.icons + '*.svg'])
 		.pipe(svgicons2svgfont({
-			fontName: 'icons',
-			normalize: true,
-			fontHeight: 1000
+			fontName	: 'icons-400-normal',
+			normalize	: true,
+			fontHeight	: 1000,
+			log			: function() {}
 		}))
 		.on('codepoints', function(codepoints) {
-			gulp.src(config.icons.templatesPath + '/_font-icons.scss')
+			gulp.src(paths.templates + '_icons.scss')
 				.pipe(template({ glyphs: codepoints }))
-				.pipe(gulp.dest(config.styles.SCSSPath));
+				.pipe(gulp.dest(paths.scss));
 		})
 		.pipe(svg2ttf())
+		.pipe(gulp.dest(paths.fonts));
+});
+
+//------------------------ Fonts
+
+gulp.task('fonts', function() {
+	var fonts = {};
+	gulp.src([paths.fonts + '*.ttf'])
 		.pipe(ttf2woff())
-		.pipe(tap(function(file, t) {
-			gulp.src(config.icons.templatesPath + '/_icon-font.scss')
-				.pipe(template({ base64: file.contents.toString('base64') }))
-				.pipe(gulp.dest(config.styles.SCSSPath));
-		}));
+		.pipe(tap(function(file) {
+			var	chunks	= file.path.substring(file.path.lastIndexOf('/') + 1, file.path.lastIndexOf('.')).split('-'),
+				variant	= {
+							style	: chunks.pop(),
+							weight	: chunks.pop(),
+							base64	: file.contents.toString('base64')
+						};
+			chunks.forEach(function(string, i, array) { array[i] = string[0].toUpperCase() + string.slice(1) });
+			var family = chunks.join(' ');
+			if (fonts.hasOwnProperty(family)) fonts[family].push(variant);
+			else fonts[family] = [variant];
+		}))
+		.on('end', function() {
+			gulp.src(paths.templates + '_fonts.scss')
+				.pipe(template({ fonts: fonts }))
+				.pipe(gulp.dest(paths.scss));
+		});
 });
 
 //------------------------ Styles
 
 gulp.task('styles', function() {
-	gulp.src(config.styles.SCSSPath + '/**/*.scss')
+	gulp.src(paths.scss + '**/*.scss')
 		.pipe(sass({
-			errLogToConsole: true,
-			outputStyle: 'compressed'
+			errLogToConsole	: true,
+			outputStyle		: 'compressed'
 		}))
 		.pipe(autoprefixer({
-			browsers: ['last 2 versions', 'IE 9'],
-			cascade: false
+			browsers	: ['last 2 versions', 'IE 9'],
+			cascade		: false
 		}))
-		.pipe(gulp.dest(config.styles.CSSPath));
+		.pipe(gulp.dest(paths.css));
 });
 
 //------------------------------------------------ Default tasks
 
 gulp.task('default', function() {
-	gulp.start('icons', 'styles');
+	gulp.start('icons', 'fonts', 'styles');
 });	
 
 //------------------------------------------------ Watch tasks
 
 gulp.task('watch', function() {
-	gulp.watch(config.icons.vectorsPath + '/**/*.svg', ['icons']);
-	gulp.watch(config.styles.SCSSPath + '/**/*.scss', ['styles']);
+	gulp.watch(paths.icons + '**/*.svg', ['icons']);
+	gulp.watch(paths.fonts + '**/*.ttf', ['fonts']);
+	gulp.watch(paths.scss + '**/*.scss', ['styles']);
 });

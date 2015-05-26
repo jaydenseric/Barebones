@@ -34,17 +34,11 @@ After an initial build you can run `gulp watch` for file changes to trigger inte
 
 ## Sass structure
 
-Most Sass variables should be set in *_config.scss* for convenience and to ensure their availability throughout the project.
-
-Handy mixins are available from *_utilities.scss*. Add more of your own here as required.
-
-Declare your fonts in *_fonts.scss*.
-
-Set animation keyframes in *_animations.scss*.
-
-A simple [CSS foundation](http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation) is in *_foundation.scss* in place of a normalize or reset.
-
-Place your main styles in *_styles.scss*, tapping into all the above.
+- Most Sass variables should be set in *_config.scss* for convenience and to ensure their availability throughout the project.
+- Handy mixins are available from *_utilities.scss*. Add more of your own here as required.
+- Set animation keyframes in *_animations.scss*.
+- A simple [CSS foundation](http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation) is in *_foundation.scss* in place of a normalize or reset.
+- Place your main styles in *_styles.scss*, tapping into all the above.
 
 ## Automatic CSS vendor prefixes
 
@@ -52,19 +46,42 @@ Remember not to use vendor prefixes in your Sass, [Autoprefixer](https://github.
 
 ## How-to
 
+### Add fonts
+
+1. In */fonts* add a TTF with the filename convention *[font-family](http://www.w3.org/TR/css-fonts-3/#font-family-prop)-[font-weight](http://www.w3.org/TR/css-fonts-3/#font-weight-prop)-[font-style](http://www.w3.org/TR/css-fonts-3/#font-style-prop).ttf*. It's best to stick to number values for the weight so files order nicely.
+2. Run `gulp` (see ***Building Barebones***) to add an `@font-face` declaration with a WOFF Base64 data URI to the generated file *_fonts.scss*.
+3. In *_config.scss* make sure there is a font stack set for the `font-family`.
+4. Use the new font variation in *_styles.scss*.
+
+#### Example
+
+After adding *proxima-nova-100-italic.ttf* and running Gulp, in *_config.scss* at the end of the ***Font stacks*** section:
+
+```scss
+$proxima-nova: Proxima Nova, $sans-serif;
+```
+
+In *_styles.scss*:
+
+```scss
+em {
+	font-family: $proxima-nova;
+	font-weight: 100;
+	font-style: italic;
+}
+```
+
 ### Create & use font icons
 
-Adding and using custom font icons is a breeze thanks to Gulp.
-
-1. Add an optimized SVG file named after the icon to */icons/vectors/*.
-2. If `gulp watch` was running (run `gulp` if you forgot) the icon font is automatically updated in the Sass as a Base64 WOFF data URI, along with a new unicode character map.
-3. Use the `icon($position: before, $icon: false, $styles: true)` mixin in *_styles.scss* to add the new icon wherever you like. Use the SVG filename without the extension for the `$icon` parameter. Easy!
+1. Add an optimized SVG file named after the icon to */icons*.
+2. Run `gulp` (see ***Building Barebones***) to generate the new icon font and unicode character map in the Sass.
+3. In *_styles.scss* use the `icon($position: before, $icon: false, $styles: true)` mixin to add the new icon wherever you like. Use the SVG filename without the extension for the `$icon` parameter. Easy!
 
 See [*"Fun with Sass & font icons"*](http://jaydenseric.com/blog/fun-with-sass-and-font-icons) to learn more about the mixin.
 
 #### Example
 
-The icon *menu.svg* is included by default. First make sure to run `gulp` (see ***Building Barebones***), then in *_styles.scss*:
+The icon *menu.svg* is included by default. After running `gulp`, in *_styles.scss*:
 
 ```scss
 .menu {
@@ -83,8 +100,6 @@ The icon *menu.svg* is included by default. First make sure to run `gulp` (see *
 In *_config.scss*:
 
 ```scss
-//------------------------------------------------ Parallax scene
-
 $scene-layers:	(
 					sky,
 					mountains,
@@ -95,8 +110,6 @@ $scene-layers:	(
 In *_styles.scss*:
 
 ```scss
-//------------------------------------------------ Parallax scene
-
 .sky {
 	z-index: layer($scene-layers, sky);
 }
