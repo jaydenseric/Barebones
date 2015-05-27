@@ -4,7 +4,7 @@
 <% _.each(font, function(variant) { %>
 @font-face {
 	font-family: <%= family %>;
-	src: url(data:application/x-font-woff;charset=utf-8;base64,<%= variant.base64 %>) format('woff');<% if (variant.weight != '400') { %>
+	src: url(data:application/x-font-woff;charset=utf-8;base64,<%= variant.base64 %>) format('woff');<% if (variant.weight != 'normal' && variant.weight != '400') { %>
 	font-weight: <%= variant.weight %>;<% } if (variant.style != 'normal') { %>
 	font-style: <%= variant.style %>;<% } %>
 }<% })}) %>
