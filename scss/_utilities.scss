@@ -20,7 +20,7 @@
 	@if $position == both {
 		$position: 'before, &:after';
 	}
-	&:#{$position} {
+	&::#{$position} {
 		@if $icon {
 			content: "#{map-get($font-icons, $icon)}";
 		}
