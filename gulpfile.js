@@ -29,11 +29,11 @@ gulp.task('icons', function() {
 			fontName	: 'icons-400-normal',
 			normalize	: true,
 			fontHeight	: 1000,
-			log			: function() {}
+			log			: function() {} // Silence
 		}))
-		.on('codepoints', function(codepoints) {
+		.on('glyphs', function(glyphs) {
 			gulp.src(paths.templates + '_icons.scss')
-				.pipe(template({ glyphs: codepoints }))
+				.pipe(template({ glyphs: glyphs }))
 				.pipe(gulp.dest(paths.scss));
 		})
 		.pipe(svg2ttf())
@@ -84,7 +84,7 @@ gulp.task('styles', function() {
 
 gulp.task('default', function() {
 	gulp.start('icons', 'fonts', 'styles');
-});	
+});
 
 //------------------------------------------------ Watch tasks
 
