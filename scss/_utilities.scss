@@ -1,20 +1,14 @@
-//------------------------------------------------ Converts any color to transparent RGBA
-
-// Useful for avoiding a black tint in color to transparent gradients.
-
-@function transparent($color) {
-	@return rgba(red($color), green($color), blue($color), 0);
-}
-
 //------------------------------------------------ Gets a layer's z-index
 
-// Manage layers in the config file.
+// See: https://github.com/jaydenseric/Barebones#set-z-index-layers
 
 @function layer($stack, $name, $base-index: 0) {
 	@return $base-index + index($stack, $name);
 }
 
 //------------------------------------------------ Sets a font icon
+
+// See: https://github.com/jaydenseric/Barebones#create--use-font-icons
 
 @mixin icon($position: before, $icon: false, $styles: true) {
 	@if $position == both {
