@@ -38,7 +38,7 @@ After an initial build you can run `gulp watch` for file changes to trigger inte
 - Handy mixins are available from *_utilities.scss*. Add more of your own here as required.
 - Set animation keyframes in *_animations.scss*.
 - A simple [CSS foundation](http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation) is in *_foundation.scss* in place of a normalize or reset.
-- Place your main styles in *_styles.scss*, tapping into all the above.
+- Place your main styles in *main.scss*, tapping into all the above.
 
 ## Automatic CSS vendor prefixes
 
@@ -51,7 +51,7 @@ Remember not to use vendor prefixes in your Sass, [Autoprefixer](https://github.
 1. In */fonts* add a TTF with the filename convention *[font-family](http://www.w3.org/TR/css-fonts-3/#font-family-prop)-[font-weight](http://www.w3.org/TR/css-fonts-3/#font-weight-prop)-[font-style](http://www.w3.org/TR/css-fonts-3/#font-style-prop).ttf*. It's best to stick to number values for the weight so files order nicely.
 2. Run `gulp` (see ***Building Barebones***) to add an `@font-face` declaration with a WOFF Base64 data URI to the generated file *_fonts.scss*.
 3. In *_config.scss* make sure there is a font stack set for the `font-family`.
-4. Use the new font variation in *_styles.scss*.
+4. Use the new font variation in *main.scss*.
 
 #### Example
 
@@ -61,7 +61,7 @@ After adding *proxima-nova-100-italic.ttf* and running Gulp, in *_config.scss* a
 $proxima-nova: Proxima Nova, $sans-serif;
 ```
 
-In *_styles.scss*:
+In *main.scss*:
 
 ```scss
 em {
@@ -75,13 +75,13 @@ em {
 
 1. Add an optimized SVG file named after the icon to */icons*.
 2. Run `gulp` (see ***Building Barebones***) to generate the new icon font and unicode character map in the Sass.
-3. In *_styles.scss* use the `icon($position: before, $icon: false, $styles: true)` mixin to add the new icon wherever you like. Use the SVG filename without the extension for the `$icon` parameter. Easy!
+3. In *main.scss* use the `icon($position: before, $icon: false, $styles: true)` mixin to add the new icon wherever you like. Use the SVG filename without the extension for the `$icon` parameter. Easy!
 
 See [*"Fun with Sass & font icons"*](http://jaydenseric.com/blog/fun-with-sass-and-font-icons) to learn more about the mixin.
 
 #### Example
 
-The icon *menu.svg* is included by default. After running `gulp`, in *_styles.scss*:
+The icon *menu.svg* is included by default. After running `gulp`, in *main.scss*:
 
 ```scss
 .menu {
@@ -107,7 +107,7 @@ $scene-layers:	(
 				);
 ```
 
-In *_styles.scss*:
+In *main.scss*:
 
 ```scss
 .sky {
@@ -121,29 +121,27 @@ In *_styles.scss*:
 }
 ```
 
-### Specify IE9 or modern browser only styles
+### Specify IE9 styles
 
-IE9 gets *main-ie9.css* via HTML conditional comments while everything else runs *main.css*. The Sass framework compiles relevant CSS to each of these files.
-
-The `$ie9` variable is available anywhere in your SCSS to apply hacks and fixes.
+So you can target IE <= 9 in your SCSS for hacks and fixes *lte-ie9.js* adds a `lte-ie9` class to the `html` tag.
 
 #### Example
 
-In *_styles.scss*:
+In *main.scss*:
 
 ```scss
-@if $ie9 {
-	// IE9 only styles
-}
-@if not $ie9 {
-	// Styles excluded from IE9
+div {
+	background: linear-gradient(red, blue);
+	.lte-ie9 & {
+		background: mix(red, blue);
+	}
 }
 ```
 
-### Add IE9 only JS polyfills & fixes
+### Add IE9 JS polyfills & fixes
 
-IE9 runs *ie9.js* before *main.js* via HTML conditional comments. Modern browsers do not download this file.
+Place all your IE <= 9 scripts in *lte-ie9.js*, which is run via a HTML conditional comment before *main.js*.
 
 #### Example
 
-If you are using HTML5 form field `placeholder` attributes in your project and would like them to work in IE9, add a polyfill such as [*mathiasbynens/jquery-placeholder*](http://mths.be/placeholder) to *ie9.js*.
+If you need HTML5 form field `placeholder` attributes to work in IE9, add a polyfill such as [*mathiasbynens/jquery-placeholder*](http://mths.be/placeholder) to *lte-ie9.js*.
