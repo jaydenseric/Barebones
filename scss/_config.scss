@@ -4,14 +4,14 @@
 
 //------------------------------------------------ Font stacks
 
-$sans-serif:							'Helvetica Neue', Arial, sans-serif;
+$sans-serif:							Helvetica Neue, Arial, sans-serif;
 $icons:									Icons;
 
 //------------------------------------------------ Icons
 
 @import 'icons';
 
-//------------------------------------------------ Foundational
+//------------------------------------------------ Common
 
 $image-path:							'../images/';
 $global-transition-duration:			.3s;
