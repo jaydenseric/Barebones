@@ -69,10 +69,11 @@ gulp.task('fonts', function() {
 
 gulp.task('styles', function() {
 	gulp.src(paths.scss + '**/*.scss')
-		.pipe(sass({
-			errLogToConsole	: true,
-			outputStyle		: 'compressed'
-		}))
+		.pipe(sass({ outputStyle: 'compressed' }))
+		.on('error', function(error) {
+			console.log(error.toString());
+			this.emit('end');
+		})
 		.pipe(autoprefixer({
 			browsers	: ['last 2 versions', 'IE 9'],
 			cascade		: false
