@@ -3,7 +3,7 @@
 // See: https://github.com/jaydenseric/Barebones#set-z-index-layers
 
 @function layer($stack, $name, $base-index: 0) {
-	@return $base-index + index($stack, $name);
+  @return $base-index + index($stack, $name);
 }
 
 //------------------------------------------------ Sets a font icon
@@ -11,19 +11,19 @@
 // See: https://github.com/jaydenseric/Barebones#create--use-font-icons
 
 @mixin icon($position: before, $icon: false, $styles: true) {
-	@if $position == both {
-		$position: 'before, &:after';
-	}
-	&::#{$position} {
-		@if $icon {
-			content: "#{map-get($font-icons, $icon)}";
-		}
-		@if $styles {
-			speak: none;
-			font-style: normal;
-			font-weight: normal;
-			font-family: $icons;
-		}
-		@content;
-	}
+  @if $position == both {
+    $position: 'before, &:after';
+  }
+  &::#{$position} {
+    @if $icon {
+      content: "#{map-get($font-icons, $icon)}";
+    }
+    @if $styles {
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-family: $icons;
+    }
+    @content;
+  }
 }

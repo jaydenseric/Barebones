@@ -65,9 +65,9 @@ In *main.scss*:
 
 ```scss
 em {
-	font-family: $proxima-nova;
-	font-weight: 100;
-	font-style: italic;
+  font-family: $proxima-nova;
+  font-weight: 100;
+  font-style: italic;
 }
 ```
 
@@ -85,9 +85,9 @@ The icon *menu.svg* is included by default. After running `gulp`, in *main.scss*
 
 ```scss
 .menu {
-	@include icon(before, menu) {
-		font-size: 200%;
-	}
+  @include icon(before, menu) {
+    font-size: 200%;
+  }
 }
 ```
 
@@ -100,24 +100,24 @@ The icon *menu.svg* is included by default. After running `gulp`, in *main.scss*
 In *_config.scss*:
 
 ```scss
-$scene-layers:	(
-					sky,
-					mountains,
-					person
-				);
+$scene-layers: (
+  sky,
+  mountains,
+  person
+);
 ```
 
 In *main.scss*:
 
 ```scss
 .sky {
-	z-index: layer($scene-layers, sky);
+  z-index: layer($scene-layers, sky);
 }
 .mountains {
-	z-index: layer($scene-layers, mountains);
+  z-index: layer($scene-layers, mountains);
 }
 .person {
-	z-index: layer($scene-layers, person);
+  z-index: layer($scene-layers, person);
 }
 ```
 
@@ -131,10 +131,10 @@ In *main.scss*:
 
 ```scss
 div {
-	background: linear-gradient(red, blue);
-	.lte-ie9 & {
-		background: mix(red, blue);
-	}
+  background: linear-gradient(red, blue);
+  .lte-ie9 & {
+    background: mix(red, blue);
+  }
 }
 ```
 
