@@ -5,19 +5,34 @@ var paths = {
   icons     : 'icons/',
   fonts     : 'fonts/',
   scss      : 'scss/',
-  css       : 'css/'
+  css       : 'css/',
+  js        : 'js/'
 };
 
 //------------------------------------------------ Resources
 
 var gulp             = require('gulp'),
     autoprefixer     = require('gulp-autoprefixer'),
+    concat           = require('gulp-concat'),
     sass             = require('gulp-sass'),
+    sourcemaps       = require('gulp-sourcemaps'),
     svg2ttf          = require('gulp-svg2ttf'),
     svgicons2svgfont = require('gulp-svgicons2svgfont'),
     tap              = require('gulp-tap'),
     template         = require('gulp-template'),
-    ttf2woff         = require('gulp-ttf2woff');
+    ttf2woff         = require('gulp-ttf2woff'),
+    uglify           = require('gulp-uglify');
+
+//------------------------------------------------ Helpers
+
+//------------------------ Prevents errors breaking watch
+
+// See: http://stackoverflow.com/a/23973536
+
+function swallowError(error) {
+  console.log(error.toString());
+  this.emit('end');
+}
 
 //------------------------------------------------ Tasks
 
@@ -70,10 +85,7 @@ gulp.task('fonts', function() {
 gulp.task('styles', function() {
   gulp.src(paths.scss + '**/*.scss')
     .pipe(sass({ outputStyle: 'compressed' }))
-    .on('error', function(error) {
-      console.log(error.toString());
-      this.emit('end');
-    })
+    .on('error', swallowError)
     .pipe(autoprefixer({
       browsers : ['last 2 versions', 'IE 9'],
       cascade  : false
@@ -81,10 +93,27 @@ gulp.task('styles', function() {
     .pipe(gulp.dest(paths.css));
 });
 
+//------------------------ Scripts
+
+gulp.task('scripts', function() {
+  gulp.src([
+    paths.js + 'src/polyfills/**/*.js',
+    paths.js + 'src/lib/**/*.js',
+    paths.js + 'src/plugins/**/*.js',
+    paths.js + 'src/*.js'
+  ])
+    .pipe(sourcemaps.init())
+    .pipe(uglify({ mangle: false }))
+    .on('error', swallowError)
+    .pipe(concat('main.min.js'))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(paths.js));
+});
+
 //------------------------------------------------ Default tasks
 
 gulp.task('default', function() {
-  gulp.start('icons', 'fonts', 'styles');
+  gulp.start('icons', 'fonts', 'styles', 'scripts');
 });
 
 //------------------------------------------------ Watch tasks
@@ -93,4 +122,5 @@ gulp.task('watch', function() {
   gulp.watch(paths.icons + '**/*.svg', ['icons']);
   gulp.watch(paths.fonts + '**/*.ttf', ['fonts']);
   gulp.watch(paths.scss + '**/*.scss', ['styles']);
+  gulp.watch(paths.js + 'src/**/*.js', ['scripts']);
 });

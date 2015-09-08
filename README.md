@@ -1,8 +1,6 @@
-![Barebones logo](http://jaydenseric.com/shared/barebones-logo.svg)
+# ![Barebones](http://jaydenseric.com/shared/barebones-logo.svg)
 
-# Barebones front end framework
-
-The barebones needed to get started on a modern front end. Only the things needed in every responsive project are included; ready to extend as required. A Sassy and streamlined alternative to the [HTML5 Boilerplate](http://html5boilerplate.com).
+A barebones framework for getting started on a modern front end. Only the things needed in every responsive project are included; ready to extend as required. A Sassy and streamlined alternative to the [HTML5 Boilerplate](http://html5boilerplate.com).
 
 - Minimalist [Sass](http://sass-lang.com) framework.
 - Super efficient font icons workflow.
@@ -12,11 +10,11 @@ The barebones needed to get started on a modern front end. Only the things neede
 
 ## Browser support
 
-All modern browsers and IE9+ are supported in the [*master* branch](https://github.com/jaydenseric/Barebones/tree/master). Checkout the [*ie8-support* branch](https://github.com/jaydenseric/Barebones/tree/ie8-support) for added IE8 support and documentation.
+[Evergreen browsers](http://stackoverflow.com/a/19060334) and IE9.
 
-## Building Barebones
+## Building
 
-Building is handled via command-line and is necessary to generate the icon font, compile Sass to CSS, vendor prefix the CSS, etc.
+Handled via command-line to generate the icon font, compile Sass to CSS, vendor prefix the CSS, concatenate and minify the JS, etc.
 
 ### Setup
 
@@ -24,7 +22,7 @@ Building is handled via command-line and is necessary to generate the icon font,
 2. Ensure [Gulp](http://gulpjs.com) is installed: `npm install --global gulp`.
 3. In the repo, run `npm install`.
 
-The above are only used for building during development and are not server requirements.
+The above are only for building during development and are not server requirements.
 
 ### Build
 
@@ -32,19 +30,30 @@ In the repo, run `gulp` for a full build.
 
 After an initial build you can run `gulp watch` for file changes to trigger intelligent rebuilds.
 
-## Sass structure
+## Working with Sass
 
-- Most Sass variables should be set in *_config.scss* for convenience and to ensure their availability throughout the project.
-- Handy mixins are available from *_utilities.scss*. Add more of your own here as required.
-- Set animation keyframes in *_animations.scss*.
-- A simple [CSS foundation](http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation) is in *_foundation.scss* in place of a normalize or reset.
-- Place your main styles in *main.scss*, tapping into all the above.
+Sass in */scss* compiles in order:
 
-## Automatic CSS vendor prefixes
+1. *_config.scss* — set variables here to ensure availability everywhere.
+2. *_utilities.scss* — handy mixins, add more of your own as required.
+3. *_animations.scss* — animation keyframes.
+4. *_foundation.scss* — a simple [CSS foundation](http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation).
+5. *main.scss* — utilize all the above.
 
 Remember not to use vendor prefixes in your Sass, [Autoprefixer](https://github.com/postcss/autoprefixer) parses the compiled Sass and adds vendor-prefixed CSS properties using the [Can I Use](http://caniuse.com) database. You can [adjust the browsers supported](https://github.com/postcss/autoprefixer#browsers) in *gulpfile.js*.
 
-## How-to
+## Working with JS
+
+Scripts in */js/src* are concatenated and minified by Gulp to */js/main.min.js* in order:
+
+1. *polyfills* — Modernizr maintains [a handy guide](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills).
+2. *lib* — libraries like jQuery.
+3. *plugins* — plugins dependant on libraries.
+4. *main.js* — utilize all the above.
+
+Avoid adding already minified scripts for better sourcemap assisted debugging.
+
+## How-to guide
 
 ### Add fonts
 
@@ -74,7 +83,7 @@ em {
 ### Create & use font icons
 
 1. Add an optimized SVG file named after the icon to */icons*.
-2. Run `gulp` (see ***Building Barebones***) to generate the new icon font and unicode character map in the Sass.
+2. Run `gulp` (see ***Building Barebones***) to generate the new icon font and Unicode character map in the Sass.
 3. In *main.scss* use the `icon($position: before, $icon: false, $styles: true)` mixin to add the new icon wherever you like. Use the SVG filename without the extension for the `$icon` parameter. Easy!
 
 See [*"Fun with Sass & font icons"*](http://jaydenseric.com/blog/fun-with-sass-and-font-icons) to learn more about the mixin.
@@ -120,28 +129,3 @@ In *main.scss*:
   z-index: layer($scene-layers, person);
 }
 ```
-
-### Specify IE9 styles
-
-So you can target IE <= 9 in your SCSS for hacks and fixes *lte-ie9.js* adds a `lte-ie9` class to the `html` tag.
-
-#### Example
-
-In *main.scss*:
-
-```scss
-div {
-  background: linear-gradient(red, blue);
-  .lte-ie9 & {
-    background: mix(red, blue);
-  }
-}
-```
-
-### Add IE9 JS polyfills & fixes
-
-Place all your IE <= 9 scripts in *lte-ie9.js*, which is run via a HTML conditional comment before *main.js*.
-
-#### Example
-
-If you need HTML5 form field `placeholder` attributes to work in IE9, add a polyfill such as [*mathiasbynens/jquery-placeholder*](http://mths.be/placeholder) to *lte-ie9.js*.
