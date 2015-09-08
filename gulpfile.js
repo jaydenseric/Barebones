@@ -11,9 +11,10 @@ var paths = {
 
 //------------------------------------------------ Resources
 
-var gulp             = require('gulp'),
-    autoprefixer     = require('gulp-autoprefixer'),
+var autoprefixer     = require('autoprefixer'),
+    gulp             = require('gulp'),
     concat           = require('gulp-concat'),
+    postcss          = require('gulp-postcss'),
     sass             = require('gulp-sass'),
     sourcemaps       = require('gulp-sourcemaps'),
     svg2ttf          = require('gulp-svg2ttf'),
@@ -86,10 +87,12 @@ gulp.task('styles', function() {
   gulp.src(paths.scss + '**/*.scss')
     .pipe(sass({ outputStyle: 'compressed' }))
     .on('error', swallowError)
-    .pipe(autoprefixer({
-      browsers : ['last 2 versions', 'IE 9'],
-      cascade  : false
-    }))
+    .pipe(postcss([
+      autoprefixer({
+        browsers : ['last 2 versions', 'IE 9'],
+        cascade  : false
+      })
+    ]))
     .pipe(gulp.dest(paths.css));
 });
 
