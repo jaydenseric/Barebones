@@ -40,7 +40,7 @@ Sass in */scss* compiles in order:
 4. *_foundation.scss* — a simple [CSS foundation](http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation).
 5. *main.scss* — utilize all the above.
 
-Remember not to use vendor prefixes in your Sass, [Autoprefixer](https://github.com/postcss/autoprefixer) parses the compiled Sass and adds vendor-prefixed CSS properties using the [Can I Use](http://caniuse.com) database. You can [adjust the browsers supported](https://github.com/postcss/autoprefixer#browsers) in *gulpfile.js*.
+Don't manually vendor prefix rules; [Autoprefixer](https://github.com/postcss/autoprefixer) parses the compiled CSS and adds the prefixes required to support the [browsers configured](https://github.com/postcss/autoprefixer#browsers) in *gulpfile.js*.
 
 ## Working with JS
 
