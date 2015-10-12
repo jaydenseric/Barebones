@@ -1,12 +1,13 @@
 # ![Barebones](http://jaydenseric.com/shared/barebones-logo.svg)
 
-A barebones framework for getting started on a modern front end. Only the things needed in every responsive project are included; ready to extend as required. A Sassy and streamlined alternative to the [HTML5 Boilerplate](http://html5boilerplate.com).
+A barebones framework for getting started on a modern front end.
 
-- Minimalist [Sass](http://sass-lang.com) framework.
-- Super efficient font icons workflow.
-- Write standard CSS without prefixes thanks to [Autoprefixer](https://github.com/postcss/autoprefixer).
-- No opinionated bloat or pre-developed components.
-- Easy compilation via [Gulp](http://gulpjs.com), setup purely via [NPM](https://npmjs.com).
+- Cross-platform build tools via [NPM](https://npmjs.com) with [Gulp](http://gulpjs.com).
+- Efficient workflow for fonts and font icons.
+- Tiny [Sass](http://sass-lang.com) framework.
+- Write standard CSS without prefixes with [Autoprefixer](https://github.com/postcss/autoprefixer).
+- Minimalist [CSS foundation](http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation) in place of Normalize or Reset.
+- No pre-developed bloat.
 
 ## Browser support
 
@@ -18,17 +19,16 @@ Handled via command-line to generate the icon font, compile Sass to CSS, vendor 
 
 ### Setup
 
-1. Ensure [Node.js](https://nodejs.org) is installed.
-2. Ensure [Gulp](http://gulpjs.com) is installed: `npm install --global gulp`.
-3. In the repo, run `npm install`.
+For development (not required on the server):
 
-The above are only for building during development and are not server requirements.
+1. Ensure the latest [Node.js and NPM](https://nodejs.org) is installed.
+3. In the repo, run `npm install`.
 
 ### Build
 
-In the repo, run `gulp` for a full build.
+In the repo, run `npm run build` for a full build.
 
-After an initial build you can run `gulp watch` for file changes to trigger intelligent rebuilds.
+After an initial build you can run `npm run build -- watch` for file changes to trigger intelligent rebuilds.
 
 ## Working with Sass
 
