@@ -89,7 +89,7 @@ gulp.task('styles', function() {
     .on('error', swallowError)
     .pipe(postcss([
       autoprefixer({
-        browsers : ['last 2 versions', 'IE 9'],
+        browsers : ['> 1% in AU', 'IE >= 9'],
         cascade  : false
       })
     ]))

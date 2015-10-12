@@ -30,6 +30,15 @@ In the repo, run `npm run build` for a full build.
 
 After an initial build you can run `npm run build -- watch` for file changes to trigger intelligent rebuilds.
 
+## First steps
+
+1. Set your [two-letter country code](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements) for Autoprefixer in the `styles` task in *gulpfile.js* or remove ` in AU` for global data.
+2. Replace placeholder images:
+  - *favicon.ico*.
+  - *apple-touch-icon.png*.
+  - *media/tile.png*.
+  - *media/tile-wide.png*.
+
 ## Working with Sass
 
 Sass in */scss* compiles in order:
