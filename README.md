@@ -7,11 +7,8 @@ A barebones framework for getting started on a modern front end.
 - Tiny [Sass](http://sass-lang.com) framework.
 - Write standard CSS without prefixes with [Autoprefixer](https://github.com/postcss/autoprefixer).
 - Minimalist [CSS foundation](http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation) in place of Normalize or Reset.
-- No pre-developed bloat.
-
-## Browser support
-
-[Evergreen browsers](http://stackoverflow.com/a/19060334) and IE9.
+- Supports [evergreen browsers](http://stackoverflow.com/a/19060334) and IE 9+.
+- [MIT licence](https://en.wikipedia.org/wiki/MIT_License).
 
 ## Building
 
@@ -67,7 +64,7 @@ Avoid adding already minified scripts for better sourcemap assisted debugging.
 ### Add fonts
 
 1. In */fonts* add a TTF with the filename convention *[font-family](http://www.w3.org/TR/css-fonts-3/#font-family-prop)-[font-weight](http://www.w3.org/TR/css-fonts-3/#font-weight-prop)-[font-style](http://www.w3.org/TR/css-fonts-3/#font-style-prop).ttf*. It's best to stick to number values for the weight so files order nicely.
-2. Run `gulp` (see ***Building Barebones***) to add an `@font-face` declaration with a WOFF Base64 data URI to the generated file *_fonts.scss*.
+2. Run a build (see ***Building***) to add an `@font-face` declaration with a WOFF Base64 data URI to the generated file *_fonts.scss*.
 3. In *_config.scss* make sure there is a font stack set for the `font-family`.
 4. Use the new font variation in *main.scss*.
 
@@ -92,14 +89,14 @@ em {
 ### Create & use font icons
 
 1. Add an optimized SVG file named after the icon to */icons*.
-2. Run `gulp` (see ***Building Barebones***) to generate the new icon font and Unicode character map in the Sass.
+2. Run a build (see ***Building***) to generate the new icon font and Unicode character map in the Sass.
 3. In *main.scss* use the `icon($position: before, $icon: false, $styles: true)` mixin to add the new icon wherever you like. Use the SVG filename without the extension for the `$icon` parameter. Easy!
 
 See [*"Fun with Sass & font icons"*](http://jaydenseric.com/blog/fun-with-sass-and-font-icons) to learn more about the mixin.
 
 #### Example
 
-The icon *menu.svg* is included by default. After running `gulp`, in *main.scss*:
+The icon *menu.svg* is included by default. After building, in *main.scss*:
 
 ```scss
 .menu {
