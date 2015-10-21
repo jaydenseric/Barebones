@@ -8,7 +8,7 @@ A barebones framework for getting started on a modern front end.
 - Write standard CSS without prefixes with [Autoprefixer](https://github.com/postcss/autoprefixer).
 - Minimalist [CSS foundation](http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation) in place of Normalize or Reset.
 - Supports [evergreen browsers](http://stackoverflow.com/a/19060334) and IE 9+.
-- [MIT licence](https://en.wikipedia.org/wiki/MIT_License).
+- [MIT license](https://en.wikipedia.org/wiki/MIT_License).
 
 ## Building
 
@@ -46,7 +46,7 @@ Sass in */scss* compiles in order:
 4. *_foundation.scss* — a simple [CSS foundation](http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation).
 5. *main.scss* — utilize all the above.
 
-Don't manually vendor prefix rules; [Autoprefixer](https://github.com/postcss/autoprefixer) parses the compiled CSS and adds the prefixes required to support the [browsers configured](https://github.com/postcss/autoprefixer#browsers) in *gulpfile.js*.
+Don't manually add vendor prefix rules; [Autoprefixer](https://github.com/postcss/autoprefixer) parses the compiled CSS and adds the prefixes required to support the [browsers configured](https://github.com/postcss/autoprefixer#browsers) in *gulpfile.js*.
 
 ## Working with JS
 
@@ -64,7 +64,7 @@ Avoid adding already minified scripts for better sourcemap assisted debugging.
 ### Add fonts
 
 1. In */fonts* add a TTF with the filename convention *[font-family](http://www.w3.org/TR/css-fonts-3/#font-family-prop)-[font-weight](http://www.w3.org/TR/css-fonts-3/#font-weight-prop)-[font-style](http://www.w3.org/TR/css-fonts-3/#font-style-prop).ttf*. It's best to stick to number values for the weight so files order nicely.
-2. Run a build (see ***Building***) to add an `@font-face` declaration with a WOFF Base64 data URI to the generated file *_fonts.scss*.
+2. Run a build (see [***Building***](#building)) to add an `@font-face` declaration with a WOFF Base64 data URI to the generated file *_fonts.scss*.
 3. In *_config.scss* make sure there is a font stack set for the `font-family`.
 4. Use the new font variation in *main.scss*.
 
