@@ -89,7 +89,7 @@ em {
 ### Create & use font icons
 
 1. Add an optimized SVG file named after the icon to */icons*.
-2. Run a build (see ***Building***) to generate the new icon font and Unicode character map in the Sass.
+2. Run a build (see [***Building***](#building)) to generate the new icon font and Unicode character map in the Sass.
 3. In *main.scss* use the `icon($position: before, $icon: false, $styles: true)` mixin to add the new icon wherever you like. Use the SVG filename without the extension for the `$icon` parameter. Easy!
 
 See [*"Fun with Sass & font icons"*](http://jaydenseric.com/blog/fun-with-sass-and-font-icons) to learn more about the mixin.
