@@ -1,0 +1,16 @@
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  margin: 1em;
+  font: 16px/1 sans-serif;
+  background-color: #2e2e2e;
+}
+::selection {
+  background-color: rgba(0, 238, 255, .3);
+  opacity: 0;
+}

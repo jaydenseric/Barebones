@@ -2,136 +2,64 @@
 
 A barebones framework for getting started on a modern front end.
 
-- Cross-platform build tools via [NPM](https://npmjs.com) with [Gulp](http://gulpjs.com).
-- Efficient workflow for fonts and font icons.
-- Tiny [Sass](http://sass-lang.com) framework.
-- Write standard CSS without prefixes with [Autoprefixer](https://github.com/postcss/autoprefixer).
-- Minimalist [CSS foundation](http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation) in place of Normalize or Reset.
-- Supports [evergreen browsers](http://stackoverflow.com/a/19060334) and IE 9+.
-- [MIT license](https://en.wikipedia.org/wiki/MIT_License).
+- Cross-platform dev tools via [NPM](https://npmjs.com) with a basic [Gulp](http://gulpjs.com) workflow handing compilation, concatination, minification and sourcemaps.
+- A simple component architecture. Although UI components can be nested, assets are self-contained in sibling folders.
+- Blaze ahead with vanilla JS; the essential pollyfills come locked and loaded.
+- A standards based alternative to preprocessors such as Sass or Less, [PostCSS](https://github.com/postcss/postcss) with [CSSNext](http://cssnext.io) and [Autoprefixer](https://github.com/postcss/autoprefixer) plugins allows you to use cutting edge CSS syntax.
+- Handle icons using [SVG symbols and external reference](https://css-tricks.com/svg-use-with-external-reference-take-2). A polyfill is included for mouthbreather browsers.
+- [Evergreen browsers](http://stackoverflow.com/a/19060334) and IE 9+ are supported.
 
-## Building
+## Setup
 
-Handled via command-line to generate the icon font, compile Sass to CSS, vendor prefix the CSS, concatenate and minify the JS, etc.
-
-### Setup
-
-For development (not required on the server):
+For development (not required on a production server):
 
 1. Ensure the latest [Node.js and NPM](https://nodejs.org) is installed.
-3. In the repo, run `npm install`.
+2. In Terminal, within the project root directory run `npm install` to setup the development environment.
+3. Run `npm run task` (see ***Build*** below).
+4. Barebones must be browsed via a webserver. Simply run `npm start` if you don't have a local one handy. Magic!
 
-### Build
+## Build
 
-In the repo, run `npm run build` for a full build.
+Gulp tasks (including any you add) can be run from Terminal using `npm run task -- taskname`.
 
-After an initial build you can run `npm run build -- watch` for file changes to trigger intelligent rebuilds.
+| Command                 | Task                                      |
+|:------------------------|:------------------------------------------|
+| `npm run task -- js`    | Bundles the JS.                           |
+| `npm run task -- css`   | Bundles the CSS.                          |
+| `npm run task -- build` | A full build, bundling the JS and CSS.    |
+| `npm run task -- watch` | File changes will trigger smart rebuilds. |
+| `npm run task`          | Default. Runs `build` then `watch`.       |
 
 ## First steps
 
-1. Set your [two-letter country code](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements) for Autoprefixer in the `styles` task in *gulpfile.js* or remove ` in AU` for global data.
-2. Replace placeholder images:
-  - *favicon.ico*.
-  - *apple-touch-icon.png*.
-  - *media/tile.png*.
-  - *media/tile-wide.png*.
+Once you are setup and have studied how the intro component with sub-components works:
 
-## Working with Sass
+1. Edit `/package.json` and `/readme.md` to be about your project and not Barebones.
+2. Customize the metadata in the `<head>` of  `/index.html`.
+3. Customize the `/app` global assets.
+4. Customize `/components/page/page.css`.
+5. Remove the intro component by deleting `/components/intro` and the `.demo-component` HTML from `/index.html`. Also delete `/components/inline-code`.
 
-Sass in */scss* compiles in order:
+## Structure
 
-1. *_config.scss* — set variables here to ensure availability everywhere.
-2. *_utilities.scss* — handy mixins, add more of your own as required.
-3. *_animations.scss* — animation keyframes.
-4. *_foundation.scss* — a simple [CSS foundation](http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation).
-5. *main.scss* — utilize all the above.
+Here is the bundle (and therefore load) order:
 
-Don't manually add vendor prefix rules; [Autoprefixer](https://github.com/postcss/autoprefixer) parses the compiled CSS and adds the prefixes required to support the [browsers configured](https://github.com/postcss/autoprefixer#browsers) in *gulpfile.js*.
+1. `/pollyfils`: Polyfill JS and suporting assets.
+2. `/library`: For scripts without dependancies (other than polyfills), CSS or images that multiple components depend on. They don't have to be third-party resources.
+3. `/components`: Contains a sub-folder for each UI component. Each component folder, JS and CSS file is named after the component class for clear tracing and sourcemaping. E.g. `/components/slideshow/slideshow.js`.
+4. `/app`: Assets relating to the site as a whole, such as `favicon.ico`. Initialize all your components and subcomponents with app-specific config in `/app/app.js`.
 
-## Working with JS
+Note that bundling happens recursivly, so feel free to create subfolders withing these folders.
 
-Scripts in */js/src* are concatenated and minified by Gulp to */js/main.min.js* in order:
+There are more advanced ways to load dependancies, such as [webpack](https://webpack.github.io), [Browserify](http://browserify.org), [ES6 modules](http://exploringjs.com/es6/ch_modules.html), etc. but this apprach is easy to understand and elegant enough for small (particually single-page) sites.
 
-1. *polyfills* — Modernizr maintains [a handy guide](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills).
-2. *lib* — libraries like jQuery.
-3. *plugins* — plugins dependant on libraries.
-4. *main.js* — utilize all the above.
+## Tips
 
-Avoid adding already minified scripts for better sourcemap assisted debugging.
+- Ensure your editor utilizes [EditorConfig](http://editorconfig.org) and [ESLint](http://eslint.org).
+- Avoid adding already minified assets for better sourcemap assisted debugging.
+- Use [JSDoc](http://usejsdoc.org) when writing JavaScript.
+- Don't vendor prefix CSS rules that are on a standards track; [Autoprefixer](https://github.com/postcss/autoprefixer) will take care of it.
 
-## How-to guide
+## Licence
 
-### Add fonts
-
-1. In */fonts* add a TTF with the filename convention *[font-family](http://www.w3.org/TR/css-fonts-3/#font-family-prop)-[font-weight](http://www.w3.org/TR/css-fonts-3/#font-weight-prop)-[font-style](http://www.w3.org/TR/css-fonts-3/#font-style-prop).ttf*. It's best to stick to number values for the weight so files order nicely.
-2. Run a build (see [***Building***](#building)) to add an `@font-face` declaration with a WOFF Base64 data URI to the generated file *_fonts.scss*.
-3. In *_config.scss* make sure there is a font stack set for the `font-family`.
-4. Use the new font variation in *main.scss*.
-
-#### Example
-
-After adding *proxima-nova-100-italic.ttf* and running Gulp, in *_config.scss* at the end of the ***Font stacks*** section:
-
-```scss
-$proxima-nova: Proxima Nova, $sans-serif;
-```
-
-In *main.scss*:
-
-```scss
-em {
-  font-family: $proxima-nova;
-  font-weight: 100;
-  font-style: italic;
-}
-```
-
-### Create & use font icons
-
-1. Add an optimized SVG file named after the icon to */icons*.
-2. Run a build (see [***Building***](#building)) to generate the new icon font and Unicode character map in the Sass.
-3. In *main.scss* use the `icon($position: before, $icon: false, $styles: true)` mixin to add the new icon wherever you like. Use the SVG filename without the extension for the `$icon` parameter. Easy!
-
-See [*"Fun with Sass & font icons"*](http://jaydenseric.com/blog/fun-with-sass-and-font-icons) to learn more about the mixin.
-
-#### Example
-
-The icon *menu.svg* is included by default. After building, in *main.scss*:
-
-```scss
-.menu {
-  @include icon(before, menu) {
-    font-size: 200%;
-  }
-}
-```
-
-### Set z-index layers
-
-`z-index` layers can be named and managed as lists within the config, using the `layer($stack, $name, $base-index: 0)` function. Layer lists stack from bottom to top. The optional `$base-index` parameter can be used to layer stacks of layers.
-
-#### Example
-
-In *_config.scss*:
-
-```scss
-$scene-layers: (
-  sky,
-  mountains,
-  person
-);
-```
-
-In *main.scss*:
-
-```scss
-.sky {
-  z-index: layer($scene-layers, sky);
-}
-.mountains {
-  z-index: layer($scene-layers, mountains);
-}
-.person {
-  z-index: layer($scene-layers, person);
-}
-```
+[MIT license](https://en.wikipedia.org/wiki/MIT_License).
