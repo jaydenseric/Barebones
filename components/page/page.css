@@ -7,7 +7,8 @@ html {
 }
 body {
   margin: 1em;
-  font: 16px/1 sans-serif;
+  line-height: 1;
+  font-family: sans-serif;
   background-color: #2e2e2e;
 }
 ::selection {
