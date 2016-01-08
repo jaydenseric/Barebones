@@ -44,7 +44,7 @@ Once you are setup and have studied how the intro component with sub-components 
 
 Here is the bundle (and therefore load) order:
 
-1. `/pollyfils`: Polyfill JS and supporting assets.
+1. `/polyfills`: Polyfill JS and supporting assets.
 2. `/library`: For scripts without dependancies (other than polyfills), CSS or images that multiple components depend on. They don't have to be third-party resources.
 3. `/components`: Contains a sub-folder for each UI component. Each component folder, JS and CSS file is named after the component class for clear tracing and sourcemaping. E.g. `/components/slideshow/slideshow.js`.
 4. `/app`: Assets relating to the site as a whole, such as `favicon.ico`. Initialize all your components and subcomponents with app-specific config in `/app/app.js`.
