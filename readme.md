@@ -5,7 +5,7 @@ A barebones framework for getting started on a modern front end.
 - Cross-platform dev tools via [NPM](https://npmjs.com) with a basic [Gulp](http://gulpjs.com) workflow handing compilation, concatination, minification and sourcemaps.
 - A simple component architecture. Although UI components can be nested, assets are self-contained in sibling folders.
 - Blaze ahead with vanilla JS; the essential polyfills come locked and loaded.
-- A standards based alternative to preprocessors such as Sass or Less, [PostCSS](https://github.com/postcss/postcss) with [CSSNext](http://cssnext.io) and [Autoprefixer](https://github.com/postcss/autoprefixer) plugins allows you to use cutting edge CSS syntax.
+- [PostCSS](https://github.com/postcss/postcss) with [CSSNext](http://cssnext.io) and [Autoprefixer](https://github.com/postcss/autoprefixer) plugins allows you to use cutting edge CSS syntax; a standards-based alternative to preprocessors such as Sass or Less.
 - Handle icons using [SVG symbols and external reference](https://css-tricks.com/svg-use-with-external-reference-take-2). A polyfill is included for mouthbreather browsers.
 - [Evergreen browsers](http://stackoverflow.com/a/19060334) and IE 9+ are supported.
 
