@@ -22,13 +22,15 @@ For development (not required on a production server):
 
 Gulp tasks (including any you add) can be run from Terminal using `npm run task -- taskname`.
 
-| Command                 | Task                                      |
-|:------------------------|:------------------------------------------|
-| `npm run task -- js`    | Bundles the JS.                           |
-| `npm run task -- css`   | Bundles the CSS.                          |
-| `npm run task -- build` | A full build, bundling the JS and CSS.    |
-| `npm run task -- watch` | File changes will trigger smart rebuilds. |
-| `npm run task`          | Default. Runs `build` then `watch`.       |
+| Command                 | Task                                                       |
+|:------------------------|:-----------------------------------------------------------|
+| `npm run lint`          | Lints the JS to [Standard Style](http://standardjs.com).   |
+| `npm run task -- js`    | Bundles the JS.                                            |
+| `npm run task -- css`   | Bundles the CSS.                                           |
+| `npm run task -- build` | A full build, bundling the JS and CSS.                     |
+| `npm run task -- watch` | File changes will trigger smart rebuilds.                  |
+| `npm run task`          | Default. Runs `build` then `watch`.                        |
+| `npm start`             | Starts a dev server and opens the project in your browser. |
 
 ## First steps
 
@@ -55,10 +57,11 @@ There are more advanced ways to load dependancies, such as [webpack](https://web
 
 ## Tips
 
-- Ensure your editor utilizes [EditorConfig](http://editorconfig.org) and [ESLint](http://eslint.org).
-- Avoid adding already minified assets for better sourcemap assisted debugging.
+- Ensure your editor utilizes [EditorConfig](http://editorconfig.org).
+- Ensure your editor utilizes [ESLint](http://eslint.org). If you use [Atom](https://atom.io) install [linter-eslint](https://atom.io/packages/linter-eslint) and [standard-formatter](https://atom.io/packages/standard-formatter).
 - Use [JSDoc](http://usejsdoc.org) when writing JavaScript.
 - Don't vendor prefix CSS rules that are on a standards track; [Autoprefixer](https://github.com/postcss/autoprefixer) will take care of it.
+- Avoid adding already minified assets for better sourcemap assisted debugging.
 
 ## Licence
 
