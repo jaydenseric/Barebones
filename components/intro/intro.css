@@ -6,12 +6,12 @@
   color: #404040;
   background-color: white;
 }
-@media (min-width: 500px) {
+@media (width >= 500px) {
   .intro {
     padding: 2.5em;
   }
 }
-@media (min-width: 800px) {
+@media (width >= 800px) {
   .intro {
     padding: 4em;
   }
