@@ -55,8 +55,8 @@ gulp.task('css', function () {
 gulp.task('build', gulp.parallel('js', 'css'))
 
 gulp.task('watch', function () {
-  gulp.watch(globs.js, gulp.series('js'))
-  gulp.watch(globs.css, gulp.series('css'))
+  gulp.watch(globs.js, gulp.registry().get('js'))
+  gulp.watch(globs.css, gulp.registry().get('css'))
 })
 
 gulp.task('default', gulp.series('build', 'watch'))
