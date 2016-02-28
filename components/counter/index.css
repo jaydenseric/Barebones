@@ -1,0 +1,72 @@
+:root {
+  --pink: #ff007d;
+}
+
+.counter {
+  display: inline-block;
+  margin: 1em;
+  border-radius: .2em;
+  max-width: 14em;
+  padding: 1.2em;
+  background-color: color(white shade(8%));
+  & h1 {
+    margin: 0;
+    font-size: inherit;
+  }
+  & output {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 200%;
+    color: var(--pink);
+  }
+  & button {
+    vertical-align: middle;
+    border: 1px solid;
+    border-radius: 50%;
+    margin: 0;
+    padding: .1em;
+    text-align: center;
+    font: inherit;
+    font-size: 150%;
+    -webkit-font-smoothing: inherit;
+    color: var(--pink);
+    background: none;
+    cursor: pointer;
+    transition: .3s;
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+    & svg {
+      display: block;
+      width: .85em;
+      height: .85em;
+      fill: currentColor;
+    }
+    &:hover,
+    &:focus {
+      background-color: color(var(--pink) alpha(15%));
+    }
+    &:focus {
+      outline: 0;
+    }
+  }
+  & .play-icon {
+    display: none;
+  }
+  & .pause-icon {
+    display: block;
+  }
+  & p {
+    margin: 0;
+    font-size: 80%;
+  }
+  &.paused {
+    & .play-icon {
+      display: block;
+    }
+    & .pause-icon {
+      display: none;
+    }
+  }
+}

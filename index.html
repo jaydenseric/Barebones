@@ -1,30 +1,38 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <title>Barebones</title>
-    <meta name="description" content="A barebones project." />
-    <meta property="og:image" content="" />
-    <link rel="apple-touch-icon" href="/app/apple-touch-icon.png" />
-    <link rel="icon" href="/app/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/bundle/bundle.css" />
+    <meta name="description" content="A barebones project."/>
+    <meta property="og:image" content=""/>
+    <link rel="apple-touch-icon" href="/components/app/apple-touch-icon.png"/>
+    <link rel="icon" href="/components/app/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="/bundle/bundle.css"/>
     <script defer src="/bundle/bundle.js"></script>
   </head>
   <body>
     <section class="intro">
-      <a class="logo" href="https://github.com/jaydenseric/Barebones"><img src="/components/intro/barebones-logo.svg" alt="Barebones logo" /></a>
-      <div class="details">
-        <p>Follow the <a href="https://github.com/jaydenseric/Barebones#setup" target="_blank">setup instructions</a>. Once you have studied how this intro component with sub-components works:</p>
-        <ol>
-          <li>Edit <span class="inline-code"><svg><use xlink:href="/components/inline-code/graphics.svg#file" /></svg> <code>/package.json</code></span> and <span class="inline-code"><svg><use xlink:href="/components/inline-code/graphics.svg#file" /></svg> <code>/readme.md</code></span> to be about your project and not Barebones.</li>
-          <li>Customize the metadata in the <span class="inline-code"><code>&lt;head&gt;</code></span> of <span class="inline-code"><svg><use xlink:href="/components/inline-code/graphics.svg#file" /></svg> <code>/index.html</code></span>.</li>
-          <li>Customize the <span class="inline-code"><svg><use xlink:href="/components/inline-code/graphics.svg#folder" /></svg> <code>/app</code></span> global assets.</li>
-          <li>Customize <span class="inline-code"><svg><use xlink:href="/components/inline-code/graphics.svg#file" /></svg> <code>/components/page/page.css</code></span>.</li>
-          <li>Remove this intro component by deleting <span class="inline-code"><svg><use xlink:href="/components/inline-code/graphics.svg#folder" /></svg> <code>/components/intro</code></span> and the <span class="inline-code"><code>.demo-component</code></span> HTML from <span class="inline-code"><svg><use xlink:href="/components/inline-code/graphics.svg#file" /></svg> <code>/index.html</code></span>. Also delete <span class="inline-code"><svg><use xlink:href="/components/inline-code/graphics.svg#folder" /></svg> <code>/components/inline-code</code></span>.</li>
-        </ol>
-      </div>
+      <a class="logo" href="https://github.com/jaydenseric/Barebones"><img src="/components/intro/barebones-logo.svg" alt="Barebones logo"/></a>
+      <p>After <a href="https://github.com/jaydenseric/Barebones#setup" target="_blank">setup</a> and studying these example components:</p>
+      <ol>
+        <li>Delete them by removing the body content of <code>/index.html</code>, the <code>@import</code> in <code>/app/index.css</code> and and every component directory except for <code>/components/app</code>.</li>
+        <li>Customize the <code>/index.html</code> metadata.</li>
+        <li>Customize the <code>/app</code> global assets.</li>
+        <li>Edit <code>/package.json</code> and <code>/readme.md</code> to be about your project.</li>
+      </ol>
+      <aside class="counter paused">
+        <h1>Counter</h1>
+        <p>An example component using an ES6 class module and SVG icons.</p>
+        <output>0</output>
+        <button title="Play/pause">
+          <svg>
+            <use class="play-icon" xlink:href="/components/counter/icons.svg#play"/>
+            <use class="pause-icon" xlink:href="/components/counter/icons.svg#pause"/>
+          </svg>
+        </button>
+      </aside>
     </section>
   </body>
 </html>

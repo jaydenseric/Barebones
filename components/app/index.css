@@ -1,3 +1,5 @@
+@import '../intro';
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -12,6 +14,6 @@ body {
   background-color: #2e2e2e;
 }
 ::selection {
-  background-color: rgba(0, 238, 255, .3);
+  background-color: rgba(255, 255, 0, .5);
   opacity: 0;
 }
