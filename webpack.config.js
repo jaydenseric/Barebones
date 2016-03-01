@@ -22,11 +22,8 @@ module.exports = {
       exclude: /node_modules/,
       loader: 'babel'
     }, {
-      test: /\.(css|postcss)$/,
+      test: /\.css$/,
       loader: ExtractTextPlugin.extract('style', 'css!postcss')
-    }, {
-      test: /\.(svg|png|jpg|webm|mp4|woff|woff2)$/,
-      loader: 'file'
     }]
   },
   postcss: function (webpack) {
