@@ -12,7 +12,6 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, 'bundle'),
-    publicPath: '/bundle/',
     filename: 'bundle.js'
   },
   devtool: 'source-map',
@@ -36,6 +35,11 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
     }),
     new ExtractTextPlugin('bundle.css')
   ]
