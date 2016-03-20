@@ -1,5 +1,5 @@
 import 'babel-polyfill'
-import 'dom-elements'
+import 'dom4'
 import 'svgxuse'
 import Intro from '../intro'
 
