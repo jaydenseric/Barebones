@@ -1,16 +1,19 @@
 @import '../counter';
 
+@custom-media --intro-breakpoint-1 (width >= 32em);
+@custom-media --intro-breakpoint-2 (width >= 50em);
+
 .intro {
   padding: 1.5em;
   text-align: center;
   font-size: 18px;
   line-height: 1.5;
-  color: #404040;
+  color: color(black tint(25%));
   background-color: white;
-  @media (width >= 500px) {
+  @media (--intro-breakpoint-1) {
     padding: 2.5em;
   }
-  @media (width >= 800px) {
+  @media (--intro-breakpoint-2) {
     padding: 3.5em;
   }
   & > {

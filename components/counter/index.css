@@ -1,5 +1,5 @@
 :root {
-  --pink: #ff007d;
+  --counter-pink: #ff007d;
 }
 
 .counter {
@@ -8,6 +8,7 @@
   border-radius: .2em;
   max-width: 14em;
   padding: 1.2em;
+  color: color(black tint(25%));
   background-color: color(white shade(8%));
   & h1 {
     margin: 0;
@@ -17,7 +18,7 @@
     display: inline-block;
     vertical-align: middle;
     font-size: 200%;
-    color: var(--pink);
+    color: var(--counter-pink);
   }
   & button {
     vertical-align: middle;
@@ -29,7 +30,7 @@
     font: inherit;
     font-size: 150%;
     -webkit-font-smoothing: inherit;
-    color: var(--pink);
+    color: var(--counter-pink);
     background: none;
     cursor: pointer;
     transition: .3s;
@@ -45,7 +46,7 @@
     }
     &:hover,
     &:focus {
-      background-color: color(var(--pink) alpha(15%));
+      background-color: color(var(--counter-pink) alpha(15%));
     }
     &:focus {
       outline: 0;
