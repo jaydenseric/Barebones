@@ -7,14 +7,14 @@ const reporter = require('postcss-reporter')
 
 module.exports = {
   entry: [
-    path.join(__dirname, 'components/app/index.js'),
-    path.join(__dirname, 'components/app/index.css')
+    './components/app/index.js',
+    './components/app/index.css'
   ],
   output: {
     path: path.join(__dirname, 'bundle'),
     filename: 'bundle.js'
   },
-  devtool: 'source-map',
+  devtool: '#source-map',
   module: {
     loaders: [{
       test: /\.js$/,
