@@ -1,5 +1,5 @@
 :root {
-  --counter-pink: #ff007d;
+  --counter-color: #ff007d;
 }
 
 .counter {
@@ -18,7 +18,7 @@
     display: inline-block;
     vertical-align: middle;
     font-size: 200%;
-    color: var(--counter-pink);
+    color: var(--counter-color);
   }
   & button {
     vertical-align: middle;
@@ -30,7 +30,7 @@
     font: inherit;
     font-size: 150%;
     -webkit-font-smoothing: inherit;
-    color: var(--counter-pink);
+    color: var(--counter-color);
     background: none;
     cursor: pointer;
     transition: .3s;
@@ -46,7 +46,7 @@
     }
     &:hover,
     &:focus {
-      background-color: color(var(--counter-pink) alpha(15%));
+      background-color: color(var(--counter-color) alpha(15%));
     }
     &:focus {
       outline: 0;
