@@ -1,6 +1,6 @@
 # ![Barebones](http://jaydenseric.com/shared/barebones-logo.svg)
 
-![Version](https://img.shields.io/badge/version-5.0.1-brightgreen.svg?style=flat-square)
+![Version](https://img.shields.io/badge/version-5.1.0-brightgreen.svg?style=flat-square)
 ![Github issues](https://img.shields.io/github/issues/jaydenseric/Barebones.svg?style=flat-square)
 ![Github stars](https://img.shields.io/github/stars/jaydenseric/Barebones.svg?style=flat-square)
 
@@ -13,7 +13,7 @@ A barebones boilerplate for getting started on a bespoke front end.
 - ES6 via [Babel](https://babeljs.io) with [babel-polyfill](https://babeljs.io/docs/usage/polyfill) and [DOM4](https://github.com/WebReflection/dom4).
 - [ESLint](http://eslint.org) JS linting with tweaked [Standard Style](http://standardjs.com) rules.
 - [stylelint](http://stylelint.io) CSS linting with tweaked [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard) rules.
-- [PostCSS](https://github.com/postcss/postcss) and [CSSNext](http://cssnext.io) take care of vendor prefixes and allow cutting edge CSS syntax. A faster, standards aligned alternative to preprocessors such as Sass.
+- [PostCSS](https://github.com/postcss/postcss), [CSSNext](http://cssnext.io) and [Autoprefixer](https://github.com/postcss/autoprefixer) take care of vendor prefixes and allow cutting edge CSS syntax. A faster, standards aligned alternative to preprocessors such as Sass.
 - Handle icons the modern way with polyfilled [SVG symbols and external references](https://css-tricks.com/svg-use-with-external-reference-take-2).
 - Includes [http-server](https://github.com/indexzero/http-server) as an optional zero-config dev server.
 - IE 11 and modern browser support. IE 9+ may work without guarantee.
@@ -41,6 +41,8 @@ After studying the example components:
 2. Customize the `/index.html` metadata.
 3. Customize the `/app` global assets.
 4. Edit `/package.json` and `/readme.md` to be about your project.
+5. [Customize](https://github.com/ai/browserslist) browser support in `/browserslist` for [Autoprefixer](https://github.com/postcss/autoprefixer).
+6. Re-run the build and start scripts.
 
 ## Structure
 
