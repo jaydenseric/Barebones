@@ -11,7 +11,7 @@ module.exports = {
     './components/app/index.css'
   ],
   output: {
-    path: path.join(__dirname, 'bundle'),
+    path: path.resolve('./bundle'),
     filename: 'bundle.js'
   },
   devtool: '#source-map',
