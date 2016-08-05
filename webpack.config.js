@@ -22,7 +22,7 @@ module.exports = {
       loader: 'babel'
     }, {
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer!postcss')
+      loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer&importLoaders=1!postcss')
     }]
   },
   postcss: function (webpack) {
