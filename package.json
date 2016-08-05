@@ -21,8 +21,9 @@
     "prebuild": "npm run clean",
     "build": "webpack --progress",
     "build:watch": "npm run build -- --watch",
-    "lint:js": "eslint . --ignore-pattern bundle || true",
     "lint:css": "stylelint **/**/*.css || true",
+    "lint:js": "eslint . --ignore-pattern bundle",
+    "lint:js:fix": "npm run lint:js -- --fix",
     "start": "http-server -o"
   },
   "dependencies": {
@@ -70,6 +71,10 @@
     "parser": "babel-eslint",
     "extends": "standard",
     "rules": {
+      "arrow-parens": [
+        2,
+        "as-needed"
+      ],
       "no-new": 1,
       "valid-jsdoc": [
         2,
