@@ -76,6 +76,15 @@
         2,
         "as-needed"
       ],
+      "no-console": [
+        2,
+        {
+          "allow": [
+            "warn",
+            "error"
+          ]
+        }
+      ],
       "no-new": 1,
       "valid-jsdoc": [
         2,
