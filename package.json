@@ -27,7 +27,7 @@
     "start": "http-server -o"
   },
   "dependencies": {
-    "babel-polyfill": "^6.13.0",
+    "babel-runtime": "^6.11.6",
     "dom4": "^1.8.3",
     "domready": "^1.0.8",
     "svgxuse": "^1.1.21",
