@@ -19,7 +19,7 @@ module.exports = {
     loaders: [{
       test: /\.js$/,
       exclude: /node_modules/,
-      loader: 'babel'
+      loader: 'babel?cacheDirectory'
     }, {
       test: /\.css$/,
       loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer&importLoaders=1!postcss')
