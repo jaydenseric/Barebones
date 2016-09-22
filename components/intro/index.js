@@ -6,11 +6,14 @@ import Counter from '../counter'
  */
 export default class Intro {
   /**
-   * Constructs a new Intro instance.
-   * @param {HTMLElement} element - Containing element.
+   * Constructs a new intro component.
+   * @param {Object} options - Options.
+   * @param {HTMLElement} element - Container.
    */
-  constructor (element) {
-    // Initialize the counter component
-    new Counter(element.query('.counter'))
+  constructor (options) {
+    this.element = options.element
+    this.counter = new Counter({
+      element: this.element.query('.counter')
+    })
   }
 }

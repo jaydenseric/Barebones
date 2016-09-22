@@ -4,29 +4,30 @@
  */
 export default class Counter {
   /**
-   * Constructs a new Counter instance.
-   * @param {HTMLElement} element - Containing element.
-   * @param {Number} [time=0] - Start time in seconds.
+   * Constructs a new counter component.
+   * @param {Object} options - Options.
+   * @param {HTMLElement} options.element - Container.
+   * @param {number} [options.time=0] - Start time in seconds.
    */
-  constructor (element, time = 0) {
+  constructor ({
+    element,
+    time = 0
+  }) {
     this.element = element
     this.output = element.query('output')
-    this.toggle = element.query('button')
-    this.counter = null
+    this.button = element.query('button')
+    this.interval = null
     this.time = time
     this.paused = false
-    // Enable counter resume/pause toggle button
-    this.toggle.addEventListener('click', () => {
-      if (this.counter === null) this.resume()
-      else this.pause()
-    })
+    // Enable toggle button
+    this.button.addEventListener('click', ::this.toggle)
   }
 
   /**
    * Resumes counting.
    */
   resume () {
-    this.counter = setInterval(() => {
+    this.interval = setInterval(() => {
       this.output.innerHTML = ++this.time
     }, 1000)
     this.paused = false
@@ -37,9 +38,16 @@ export default class Counter {
    * Pauses counting.
    */
   pause () {
-    clearInterval(this.counter)
-    this.counter = null
+    clearInterval(this.interval)
+    this.interval = null
     this.paused = true
     this.element.classList.add('paused')
+  }
+
+  /**
+   * Toggles counting.
+   */
+  toggle () {
+    this.interval === null ? this.resume() : this.pause()
   }
 }
