@@ -38,7 +38,7 @@
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
     "stylelint": "^7.3.1",
-    "stylelint-config-standard": "^13.0.2",
+    "stylelint-config-barebones": "^0.1.1",
     "webpack": "^1.13.2"
   },
   "babel": {
@@ -58,25 +58,6 @@
     }
   },
   "stylelint": {
-    "extends": "stylelint-config-standard",
-    "rules": {
-      "at-rule-empty-line-before": [
-        "always",
-        {
-          "except": [
-            "blockless-after-same-name-blockless",
-            "all-nested"
-          ],
-          "ignore": [
-            "after-comment"
-          ]
-        }
-      ],
-      "font-family-name-quotes": "always-where-recommended",
-      "function-url-quotes": "always",
-      "number-leading-zero": "never",
-      "rule-nested-empty-line-before": "never",
-      "string-quotes": "single"
-    }
+    "extends": "stylelint-config-barebones"
   }
 }
