@@ -40,7 +40,7 @@ After studying the example components:
 1. Delete them by removing the body content of `/index.html`, the `@import` in `/app/index.css` and every component directory except for `/components/app`.
 2. Customize the `/index.html` metadata.
 3. Customize the `/app` global assets.
-4. Edit `/package.json` and `/readme.md` to be about your project.
+4. Edit `/readme.md` to be about your project.
 5. [Customize](https://github.com/ai/browserslist) browser support in `/browserslist` for [Autoprefixer](https://github.com/postcss/autoprefixer).
 6. Re-run the build and start scripts.
 

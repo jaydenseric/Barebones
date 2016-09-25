@@ -1,20 +1,4 @@
 {
-  "name": "barebones",
-  "version": "7.1.0",
-  "description": "A barebones boilerplate for getting started on a bespoke front end.",
-  "author": {
-    "name": "Jayden Seric",
-    "email": "me@jaydenseric.com",
-    "url": "http://jaydenseric.com"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jaydenseric/Barebones"
-  },
-  "bugs": {
-    "url": "https://github.com/jaydenseric/Barebones/issues"
-  },
   "private": true,
   "scripts": {
     "clean": "rimraf bundle",
