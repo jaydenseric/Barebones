@@ -32,7 +32,7 @@ Ensure your editor supports:
 
 - [EditorConfig](http://editorconfig.org).
 - Live linting, respecting `package.json` config.
-  - [ESLint](http://eslint.org) for JS. Atom users install [linter-eslint](https://atom.io/packages/linter-eslint) and optionally [standard-formatter](https://atom.io/packages/standard-formatter).
+  - [ESLint](http://eslint.org) for JS. Atom users install [linter-eslint](https://atom.io/packages/linter-eslint).
   - [stylelint](http://stylelint.io) for CSS. Atom users install [linter-stylelint](https://atom.io/packages/linter-stylelint).
 
 After studying the example components:
