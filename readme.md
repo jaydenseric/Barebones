@@ -10,7 +10,8 @@ A barebones boilerplate for getting started on a bespoke front end.
 - Simple ES6 class module component architecture with some (easily removed) examples.
 - [NPM](https://npmjs.com) dependancies and tools.
 - [webpack](https://webpack.github.io) for builds.
-- ES6 via [Babel](https://babeljs.io) with [babel-polyfill](https://babeljs.io/docs/usage/polyfill) and [DOM4](https://github.com/WebReflection/dom4).
+- ES6 via [Babel](https://babeljs.io).
+- [DOM4](https://github.com/WebReflection/dom4) polyfills modern DOM and [Animation Frames](https://html.spec.whatwg.org/multipage/webappapis.html#animation-frames) functionalities.
 - [ESLint](http://eslint.org) JS linting with tweaked [Standard Style](http://standardjs.com) rules and a handy auto fix script.
 - [stylelint](http://stylelint.io) CSS linting with tweaked [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard) rules.
 - [PostCSS](https://github.com/postcss/postcss), [CSSNext](http://cssnext.io) and [Autoprefixer](https://github.com/postcss/autoprefixer) take care of vendor prefixes and allow cutting edge CSS syntax. A faster, standards aligned alternative to preprocessors such as Sass.
