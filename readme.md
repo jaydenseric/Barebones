@@ -12,7 +12,7 @@ A barebones boilerplate for getting started on a bespoke front end.
 - [webpack](https://webpack.github.io) for builds.
 - ES6 via [Babel](https://babeljs.io).
 - [DOM4](https://github.com/WebReflection/dom4) polyfills modern DOM and [Animation Frames](https://html.spec.whatwg.org/multipage/webappapis.html#animation-frames) functionalities.
-- [ESLint](http://eslint.org) JS linting with tweaked [Standard Style](http://standardjs.com) rules and a handy auto fix script.
+- JS linting with [ESLint](http://eslint.org) and [extended](https://github.com/jaydenseric/eslint-config-barebones) [Standard Style](http://standardjs.com) config. A handy fix script can correct most issues across the entire project.
 - [stylelint](http://stylelint.io) CSS linting with tweaked [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard) rules.
 - [PostCSS](https://github.com/postcss/postcss), [CSSNext](http://cssnext.io) and [Autoprefixer](https://github.com/postcss/autoprefixer) take care of vendor prefixes and allow cutting edge CSS syntax. A faster, standards aligned alternative to preprocessors such as Sass.
 - Handle icons the modern way with polyfilled [SVG symbols and external references](https://css-tricks.com/svg-use-with-external-reference-take-2).
