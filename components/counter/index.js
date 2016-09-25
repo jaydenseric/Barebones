@@ -14,8 +14,8 @@ export default class Counter {
     time = 0
   }) {
     this.element = element
-    this.output = element.query('output')
-    this.button = element.query('button')
+    this.output = element.querySelector('output')
+    this.button = element.querySelector('button')
     this.interval = null
     this.time = time
     this.paused = false

@@ -13,7 +13,7 @@ export default class Intro {
   constructor (options) {
     this.element = options.element
     this.counter = new Counter({
-      element: this.element.query('.counter')
+      element: this.element.querySelector('.counter')
     })
   }
 }
