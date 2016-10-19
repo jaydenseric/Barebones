@@ -3,7 +3,7 @@
 @custom-media --intro-breakpoint-1 (width >= 32em);
 @custom-media --intro-breakpoint-2 (width >= 50em);
 
-.intro {
+[data-component='intro'] {
   padding: 1.5em;
   text-align: center;
   font-size: 18px;

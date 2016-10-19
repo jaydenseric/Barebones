@@ -5,6 +5,6 @@ import Intro from '../intro'
 
 domready(() => {
   new Intro({
-    element: document.querySelector('.intro')
+    element: document.querySelector('[data-component="intro"]')
   })
 })

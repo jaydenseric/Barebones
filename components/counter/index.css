@@ -2,7 +2,7 @@
   --counter-color: #ff007d;
 }
 
-.counter {
+[data-component='counter'] {
   display: inline-block;
   margin: 1em;
   border-radius: .2em;
