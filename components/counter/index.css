@@ -10,7 +10,7 @@
   padding: 1.2em;
   color: color(black tint(25%));
   background-color: color(white shade(8%));
-  & h1 {
+  & h2 {
     margin: 0;
     font-size: inherit;
   }
@@ -22,9 +22,9 @@
   }
   & button {
     vertical-align: middle;
+    margin: 0;
     border: 1px solid;
     border-radius: 50%;
-    margin: 0;
     padding: .1em;
     text-align: center;
     font: inherit;
@@ -52,22 +52,8 @@
       outline: 0;
     }
   }
-  & .play-icon {
-    display: none;
-  }
-  & .pause-icon {
-    display: block;
-  }
   & p {
     margin: 0;
     font-size: 80%;
-  }
-  &.paused {
-    & .play-icon {
-      display: block;
-    }
-    & .pause-icon {
-      display: none;
-    }
   }
 }

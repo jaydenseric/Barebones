@@ -7,18 +7,14 @@ export default class Counter {
    * Constructs a new counter component.
    * @param {Object} options - Options.
    * @param {HTMLElement} options.element - Container.
-   * @param {number} [options.time=0] - Start time in seconds.
    */
-  constructor ({
-    element,
-    time = 0
-  }) {
-    this.element = element
-    this.output = element.querySelector('output')
-    this.button = element.querySelector('button')
+  constructor (options) {
+    this.element = options.element
+    this.button = this.element.querySelector('button')
+    this.buttonUse = this.button.querySelector('use')
+    this.output = this.element.querySelector('output')
+    this.time = parseInt(this.output.textContent)
     this.interval = null
-    this.time = time
-    this.paused = false
     // Enable toggle button
     this.button.addEventListener('click', ::this.toggle)
   }
@@ -27,21 +23,23 @@ export default class Counter {
    * Resumes counting.
    */
   resume () {
+    // Update the interval
     this.interval = setInterval(() => {
       this.output.innerHTML = ++this.time
     }, 1000)
-    this.paused = false
-    this.element.classList.remove('paused')
+    // Update toggle button icon
+    this.constructor.setSvgUseSymbol(this.buttonUse, 'pause')
   }
 
   /**
    * Pauses counting.
    */
   pause () {
+    // Update the interval
     clearInterval(this.interval)
     this.interval = null
-    this.paused = true
-    this.element.classList.add('paused')
+    // Update toggle button icon
+    this.constructor.setSvgUseSymbol(this.buttonUse, 'play')
   }
 
   /**
@@ -49,5 +47,14 @@ export default class Counter {
    */
   toggle () {
     this.interval === null ? this.resume() : this.pause()
+  }
+
+  /**
+   * Sets the symbol referenced by an SVG use element.
+   * @param {SVGUseElement} useElement - SVG use element.
+   * @param {string} symbolId - SVG symbol ID.
+   */
+  static setSvgUseSymbol (useElement, symbolId) {
+    useElement.setAttribute('xlink:href', useElement.getAttribute('xlink:href').replace(/([^#]+$)/, symbolId))
   }
 }
