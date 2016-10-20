@@ -33,7 +33,7 @@
     "imports-loader": "^0.6.5",
     "postcss-cssnext": "^2.8.0",
     "postcss-import": "^8.1.2",
-    "postcss-loader": "^1.0.0",
+    "postcss-loader": "^0.13.0",
     "postcss-reporter": "^1.4.1",
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
