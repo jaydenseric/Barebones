@@ -14,7 +14,7 @@ module.exports = {
     path: path.resolve('./bundle'),
     filename: 'bundle.js'
   },
-  devtool: '#source-map',
+  devtool: 'source-map',
   module: {
     loaders: [{
       test: /\.js$/,
@@ -22,7 +22,7 @@ module.exports = {
       loader: 'babel?cacheDirectory'
     }, {
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer&importLoaders=1!postcss')
+      loader: ExtractTextPlugin.extract('style', 'css?sourceMap&-autoprefixer&importLoaders=1!postcss')
     }]
   },
   postcss: function (webpack) {
