@@ -69,8 +69,14 @@ After inspecting the example components:
 ## Tips
 
 - Use NPM to manage 3rd party dependencies.
-- Use [JSDoc](http://usejsdoc.org) when writing JS.
-- Don't reset, normalize or otherwise declare styles globally; all variables and rules should be scoped to a component. `html` and `body` are an exception as they form the top `app` component.
-- See [Fix.css](https://github.com/jaydenseric/Fix) for taming common elements.
-- Don't vendor prefix CSS rules that are on a standards track; [Autoprefixer](https://github.com/postcss/autoprefixer) will take care of it.
 - Avoid adding already minified assets for better sourcemap assisted debugging.
+- Use [JSDoc](http://usejsdoc.org) when writing JS.
+- Don't vendor prefix CSS rules that are on a standards track; [Autoprefixer](https://github.com/postcss/autoprefixer) will take care of it.
+- Don't reset, normalize or otherwise declare styles globally; all variables and rules should be scoped to a component. `html` and `body` are an exception as they form the top `app` component.
+
+## Helpful projects
+
+- See [Fix.css](https://github.com/jaydenseric/Fix) for taming common elements.
+- Use [svgsymbolviewer.io](http://svgsymbolviewer.io) to view symbols in SVG files.
+- Install [Hurdler](https://github.com/jaydenseric/Hurdler) to setup component URL hash interactions.
+- Install [scroll-animator](https://github.com/jaydenseric/scroll-animator) to reliably scroll to elements, even when the page is still loading.
