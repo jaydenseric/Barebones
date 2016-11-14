@@ -1,10 +1,13 @@
 import 'dom4'
 import 'svgxuse'
 import domready from 'domready'
-import Intro from '../intro'
+import Counter from '../counter'
 
 domready(() => {
-  new Intro({
-    element: document.querySelector('[data-component="intro"]')
+  // Initialize counters
+  document.queryAll('[data-component="counter"]').forEach(element => {
+    new Counter({
+      element
+    })
   })
 })

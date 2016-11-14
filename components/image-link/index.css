@@ -1,0 +1,19 @@
+[data-component='image-link'] {
+  display: block;
+  margin: 0 auto;
+  border-radius: .2em;
+  width: 17em;
+  max-width: 75%;
+  transition: .25s;
+  & img {
+    display: block;
+    width: 100%;
+  }
+  &:hover,
+  &:focus {
+    background-color: color(deeppink alpha(5%));
+  }
+  &:focus {
+    outline: 0;
+  }
+}

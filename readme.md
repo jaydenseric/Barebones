@@ -36,20 +36,23 @@ Ensure your editor supports:
   - [ESLint](http://eslint.org) for JS. Atom users install [linter-eslint](https://atom.io/packages/linter-eslint).
   - [stylelint](http://stylelint.io) for CSS. Atom users install [linter-stylelint](https://atom.io/packages/linter-stylelint).
 
-After studying the example components:
+After inspecting the example components:
 
-1. Delete them by removing the body content of `/index.html`, the `@import` in `/app/index.css` and every component directory except for `/components/app`.
-2. Customize the `/index.html` metadata.
-3. Customize the `/app` global assets.
-4. Edit `/readme.md` to be about your project.
-5. [Customize](https://github.com/ai/browserslist) browser support in `/browserslist` for [Autoprefixer](https://github.com/postcss/autoprefixer).
-6. Re-run the build and start scripts.
+1. Edit `/readme.md` to be about your project.
+2. Delete the example assets. Within the project directory in Terminal run `rm -rf components/{counter,generic-content,image-link,section} content/barebones-logo.svg`.
+3. Remove the `Counter` example import and initialization in `/components/app/index.js`.
+4. Remove the imports in `/components/app/index.css` and customize.
+5. Delete the body HTML in `/index.html` and customize the head meta.
+6. Customize the icons in `/content`.
+7. [Configure](https://github.com/ai/browserslist#config-file) browser support in `/browserslist` for tools such as [Autoprefixer](https://github.com/postcss/autoprefixer).
+8. Re-run the build and start scripts. A clean slate!
 
 ## Structure
 
-- `/components` contains a sub-directory for each component, holding source JS, styles and media. While you may nest component folders, I prefer to keep mine flat.
+- `/components` contains a sub-directory for each component, holding source JS, styles and image assets. Avoid nesting component directories as a flat structure guarantees unique component names, makes paths less complex and encourages reuse.
 - `/components/app` is the top component for the entire site and is the JS and CSS entrypoint; from here components are recursively imported and initialized. Import polyfills here.
 - `/bundle` is the compiled JS, CSS and sourcemaps.
+- `/content` is where actual content such as images live. This is analogous to a CMS `uploads` folder and can be organized however you like. Never place content assets or hardcode content text anywhere in `/components`!
 
 ## Scripts
 

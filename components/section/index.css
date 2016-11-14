@@ -1,0 +1,7 @@
+@import '../generic-content';
+@import '../counter';
+
+[data-component='section'] {
+  margin: 3em auto;
+  max-width: 35em;
+}

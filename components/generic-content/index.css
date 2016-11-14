@@ -1,0 +1,43 @@
+[data-component='generic-content'] {
+  & > :first-child {
+    margin-top: 0;
+  }
+  & h1 {
+    margin: 2em auto 1em;
+    font-size: 130%;
+  }
+  & h2 {
+    margin: 2em auto 1em;
+    font-size: 110%;
+  }
+  & ol {
+    margin: 1em 0;
+    text-align: left;
+  }
+  & li {
+    margin-top: .8em;
+    line-height: 1.5;
+  }
+  & p {
+    margin: 1em 0;
+    line-height: 1.5;
+  }
+  & a {
+    color: royalblue;
+    transition: .25s;
+    &:hover,
+    &:focus {
+      color: deeppink;
+    }
+    &:focus {
+      outline: 0;
+    }
+  }
+  & code {
+    border-radius: .2em;
+    padding: .2em .4em;
+    font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: 80%;
+    background-color: color(black alpha(4%));
+  }
+}

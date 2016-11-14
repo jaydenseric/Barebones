@@ -1,39 +1,27 @@
 :root {
-  --counter-color: #ff007d;
+  --counter-focus-color: deeppink;
 }
 
 [data-component='counter'] {
-  display: inline-block;
-  margin: 1em;
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
   border-radius: .2em;
-  max-width: 14em;
-  padding: 1.2em;
-  color: color(black tint(25%));
-  background-color: color(white shade(8%));
-  & h2 {
-    margin: 0;
-    font-size: inherit;
-  }
-  & output {
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 200%;
-    color: var(--counter-color);
-  }
+  padding: 1em 1.5em;
+  background-color: color(black alpha(8%));
   & button {
-    vertical-align: middle;
     margin: 0;
     border: 1px solid;
     border-radius: 50%;
-    padding: .1em;
+    padding: 0;
     text-align: center;
     font: inherit;
-    font-size: 150%;
+    font-size: 180%;
     -webkit-font-smoothing: inherit;
-    color: var(--counter-color);
-    background: none;
+    color: royalblue;
+    background: color(white alpha(0)); /* Fix buggy hover */
     cursor: pointer;
-    transition: .3s;
+    transition: .25s;
     &::-moz-focus-inner {
       border: 0;
       padding: 0;
@@ -46,14 +34,16 @@
     }
     &:hover,
     &:focus {
-      background-color: color(var(--counter-color) alpha(15%));
+      border-color: var(--counter-focus-color); /* Fixes Safari */
+      color: var(--counter-focus-color);
     }
     &:focus {
       outline: 0;
     }
   }
-  & p {
-    margin: 0;
-    font-size: 80%;
+  & output {
+    margin-left: .5em;
+    font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: 180%;
   }
 }

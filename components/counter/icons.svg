@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg">
-  <symbol id="play" viewBox="0 0 32 32">
+  <symbol viewBox="0 0 32 32" id="play">
     <title>Play icon</title>
     <path d="M10.667 6.667v18.667L25.334 16z"/>
   </symbol>
-  <symbol id="pause" viewBox="0 0 32 32">
+  <symbol viewBox="0 0 32 32" id="pause">
     <title>Pause icon</title>
     <path d="M8 25.333h5.333V6.666H8v18.667zM18.667 6.667v18.667H24V6.667h-5.333z"/>
   </symbol>

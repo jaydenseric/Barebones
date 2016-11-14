@@ -3,34 +3,49 @@
   <head>
     <meta charset="utf-8"/>
     <title>Barebones</title>
-    <meta name="description" content="A barebones project."/>
+    <meta name="description" content=""/>
+    <meta property="og:title" content=""/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content=""/>
-    <link rel="apple-touch-icon" href="/components/app/apple-touch-icon.png"/>
-    <link rel="icon" href="/components/app/favicon.ico"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content=""/>
+    <link rel="icon" href="/content/favicon.ico"/>
+    <link rel="apple-touch-icon" href="/content/apple-touch-icon.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="/bundle/bundle.css"/>
     <script defer src="/bundle/bundle.js"></script>
   </head>
   <body>
-    <section data-component="intro">
-      <a class="logo" href="https://github.com/jaydenseric/Barebones"><img src="/components/intro/barebones-logo.svg" alt="Barebones logo"/></a>
-      <p>After <a href="https://github.com/jaydenseric/Barebones#setup" target="_blank">setup</a> and studying these example components:</p>
-      <ol>
-        <li>Delete them by removing the body content of <code>/index.html</code>, the <code>@import</code> in <code>/app/index.css</code> and and every component directory except for <code>/components/app</code>.</li>
-        <li>Customize the <code>/index.html</code> metadata.</li>
-        <li>Customize the <code>/app</code> global assets.</li>
-        <li>Edit <code>/readme.md</code> to be about your project.</li>
-        <li><a href="https://github.com/ai/browserslist" target="_blank">Customize</a> browser support in <code>/browserslist</code> for <a href="https://github.com/postcss/autoprefixer" target="_blank">Autoprefixer</a>.</li>
-        <li>Re-run the build and start scripts.</li>
-      </ol>
-      <aside data-component="counter">
-        <h2>Counter</h2>
-        <p>An example component using an ES6 class module and SVG symbols.</p>
-        <output>0</output>
-        <button title="Play/pause">
+    <a data-component="image-link" href="https://github.com/jaydenseric/Barebones">
+      <img src="/content/barebones-logo.svg" alt="Barebones logo"/>
+    </a>
+    <section data-component="section">
+      <div data-component="generic-content">
+        <h1>Getting started</h1>
+        <p>After <a href="https://github.com/jaydenseric/Barebones#setup" target="_blank">setup</a> and inspecting these example components:</p>
+        <ol>
+          <li>Edit <code>/readme.md</code> to be about your project.</li>
+          <li>Delete the example assets. Within the project directory in Terminal run <code>rm -rf components/{counter,generic-content,image-link,section} content/barebones-logo.svg</code>.</li>
+          <li>Remove the <code>Counter</code> example import and initialization in <code>/components/app/index.js</code>.</li>
+          <li>Remove the imports in <code>/components/app/index.css</code> and customize.</li>
+          <li>Delete the body HTML in <code>/index.html</code> and customize the head meta.</li>
+          <li>Customize the icons in <code>/content</code>.</li>
+          <li><a href="https://github.com/ai/browserslist#config-file" target="_blank">Configure</a> browser support in <code>/browserslist</code> for tools such as <a href="https://github.com/postcss/autoprefixer" target="_blank">Autoprefixer</a>.</li>
+          <li>Re-run the build and start scripts. A clean slate!</li>
+        </ol>
+      </div>
+    </section>
+    <section data-component="section">
+      <div data-component="generic-content">
+        <h2>Counter example</h2>
+        <p>Below is an example component with an ES6 class and SVG symbol icons. You can find the assets in <code>/components/counter</code> and can see it being initialized in <code>/components/app/index.js</code>.</p>
+      </div>
+      <article data-component="counter">
+        <button title="Toggle play">
           <svg><use xlink:href="/components/counter/icons.svg#play"/></svg>
         </button>
-      </aside>
+        <output>0</output>
+      </article>
     </section>
   </body>
 </html>
