@@ -6,7 +6,7 @@
 
 A barebones boilerplate for getting started on a bespoke front end.
 
-- Back end agnostic.
+- Environment agnostic; setup your own backend and component templating.
 - Simple ES6 class module component architecture with some (easily removed) examples.
 - [NPM](https://npmjs.com) dependancies and tools.
 - [webpack](https://webpack.github.io) for builds.
@@ -73,6 +73,7 @@ After inspecting the example components:
 - Use [JSDoc](http://usejsdoc.org) when writing JS.
 - Don't vendor prefix CSS rules that are on a standards track; [Autoprefixer](https://github.com/postcss/autoprefixer) will take care of it.
 - Don't reset, normalize or otherwise declare styles globally; all variables and rules should be scoped to a component. `html` and `body` are an exception as they form the top `app` component.
+- Only refer to the UI and not content when naming things in `/components`. For example, `icon-link` is more versatile than `contact-us-link`.
 
 ## Helpful projects
 
