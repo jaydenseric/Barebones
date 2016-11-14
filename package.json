@@ -11,35 +11,35 @@
     "start": "http-server -o"
   },
   "dependencies": {
-    "babel-runtime": "^6.11.6",
+    "babel-runtime": "^6.18.0",
     "dom4": "^1.8.3",
     "domready": "^1.0.8",
-    "svgxuse": "^1.1.22",
+    "svgxuse": "^1.1.23",
     "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
-    "babel-core": "^6.17.0",
-    "babel-eslint": "^7.0.0",
-    "babel-loader": "^6.2.5",
+    "babel-core": "^6.18.2",
+    "babel-eslint": "^7.1.0",
+    "babel-loader": "^6.2.7",
     "babel-plugin-transform-runtime": "^6.15.0",
-    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-es2015": "^6.18.0",
     "babel-preset-stage-0": "^6.16.0",
     "css-loader": "^0.25.0",
-    "eslint": "^3.8.1",
-    "eslint-config-barebones": "^0.1.2",
+    "eslint": "^3.10.0",
+    "eslint-config-barebones": "^0.1.3",
     "exports-loader": "^0.6.3",
     "extract-text-webpack-plugin": "^1.0.1",
     "http-server": "^0.9.0",
     "imports-loader": "^0.6.5",
     "postcss-cssnext": "^2.8.0",
-    "postcss-import": "^8.1.2",
-    "postcss-loader": "^0.13.0",
-    "postcss-reporter": "^1.4.1",
+    "postcss-import": "^8.2.0",
+    "postcss-loader": "^1.1.1",
+    "postcss-reporter": "^2.0.0",
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
-    "stylelint": "^7.4.2",
+    "stylelint": "^7.5.0",
     "stylelint-config-barebones": "^0.1.2",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.3"
   },
   "babel": {
     "presets": [
