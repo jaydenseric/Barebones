@@ -1,6 +1,6 @@
 # ![Barebones](http://jaydenseric.com/shared/barebones-logo.svg)
 
-![Version](https://img.shields.io/badge/version-8.1.1-brightgreen.svg?style=flat-square)
+![Version](https://img.shields.io/badge/version-8.2.0-brightgreen.svg?style=flat-square)
 ![Github issues](https://img.shields.io/github/issues/jaydenseric/Barebones.svg?style=flat-square)
 ![Github stars](https://img.shields.io/github/stars/jaydenseric/Barebones.svg?style=flat-square)
 
