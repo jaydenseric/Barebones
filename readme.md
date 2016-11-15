@@ -38,14 +38,12 @@ Ensure your editor supports:
 
 After inspecting the example components:
 
-1. Edit `/readme.md` to be about your project.
-2. Delete the example assets. Within the project directory in Terminal run `rm -rf components/{counter,generic-content,image-link,section} content/barebones-logo.svg`.
-3. Remove the `Counter` example import and initialization in `/components/app/index.js`.
-4. Remove the imports in `/components/app/index.css` and customize.
-5. Delete the body HTML in `/index.html` and customize the head meta.
-6. Customize the icons in `/content`.
-7. [Configure](https://github.com/ai/browserslist#config-file) browser support in `/browserslist` for tools such as [Autoprefixer](https://github.com/postcss/autoprefixer).
-8. Re-run the build and start scripts. A clean slate!
+1. Remove Barebones examples and references. Within the project directory in Terminal run `npm run init`. This script also deletes itself.
+2. Customize the meta in `/index.html`.
+3. Customize the icons in `/content`.
+4. [Configure](https://github.com/ai/browserslist#config-file) browser support in `/browserslist` for tools such as [Autoprefixer](https://github.com/postcss/autoprefixer).
+5. Edit `/readme.md` to be about your project.
+6. Re-run the build and start scripts. A clean slate!
 
 ## Structure
 
@@ -58,6 +56,7 @@ After inspecting the example components:
 
 | Command               | Purpose                                         |
 |:----------------------|:------------------------------------------------|
+| `npm run init`        | Remove Barebones examples and references.       |
 | `npm run lint:js`     | Lint JS (see `eslintConfig` in `package.json`). |
 | `npm run lint:js:fix` | Lint JS and automatically fix issues.           |
 | `npm run lint:css`    | Lint CSS (see `stylelint` in `package.json`).   |
