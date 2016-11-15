@@ -31,10 +31,9 @@ For development tools and building:
 
 Ensure your editor supports:
 
-- [EditorConfig](http://editorconfig.org).
-- Live linting, respecting `package.json` config.
-  - [ESLint](http://eslint.org) for JS. Atom users install [linter-eslint](https://atom.io/packages/linter-eslint).
-  - [stylelint](http://stylelint.io) for CSS. Atom users install [linter-stylelint](https://atom.io/packages/linter-stylelint).
+- [EditorConfig](http://editorconfig.org). Atom users install [editorconfig](https://atom.io/packages/editorconfig).
+- [ESLint](http://eslint.org) live JS linting, respecting `package.json` config. Atom users install [linter-eslint](https://atom.io/packages/linter-eslint).
+- [stylelint](http://stylelint.io) live CSS linting, respecting `package.json` config. Atom users install [linter-stylelint](https://atom.io/packages/linter-stylelint).
 
 After inspecting the example components:
 
