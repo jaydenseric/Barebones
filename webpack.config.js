@@ -25,13 +25,6 @@ module.exports = {
       loader: ExtractTextPlugin.extract('style', 'css?sourceMap&-autoprefixer&importLoaders=1!postcss')
     }]
   },
-  postcss: function (webpack) {
-    return [
-      atImport({addDependencyTo: webpack}),
-      cssnext,
-      reporter({clearMessages: true})
-    ]
-  },
   plugins: [
     new webpack.ProvidePlugin({
       'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
@@ -42,5 +35,10 @@ module.exports = {
       }
     }),
     new ExtractTextPlugin('bundle.css')
+  ],
+  postcss: [
+    atImport,
+    cssnext,
+    reporter({clearMessages: true})
   ]
 }
