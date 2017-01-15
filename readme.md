@@ -17,7 +17,7 @@ A barebones boilerplate for getting started on a bespoke front end.
 - [PostCSS](https://github.com/postcss/postcss), [CSSNext](http://cssnext.io) and [Autoprefixer](https://github.com/postcss/autoprefixer) take care of vendor prefixes and allow cutting edge CSS syntax. A faster, standards aligned alternative to preprocessors such as Sass.
 - Handle icons the modern way with polyfilled [SVG symbols and external references](https://css-tricks.com/svg-use-with-external-reference-take-2).
 - Includes [http-server](https://github.com/indexzero/http-server) as an optional zero-config dev server.
-- IE 11 and modern browser support. IE 9+ may work without guarantee.
+- Browser support: [> 2% in AU](http://browserl.ist/?q=%3E+2%25+in+AU).
 - [MIT license](https://en.wikipedia.org/wiki/MIT_License).
 
 ## Setup
