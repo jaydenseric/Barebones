@@ -53,16 +53,16 @@ After inspecting the example components:
 
 ## Scripts
 
-| Command               | Purpose                                         |
-|:----------------------|:------------------------------------------------|
-| `npm run init`        | Remove Barebones examples and references.       |
-| `npm run lint:js`     | Lint JS (see `eslintConfig` in `package.json`). |
-| `npm run lint:js:fix` | Lint JS and automatically fix issues.           |
-| `npm run lint:css`    | Lint CSS (see `stylelint` in `package.json`).   |
-| `npm run clean`       | Delete `/bundle`.                               |
-| `npm run build`       | Compile JS and CSS to `/bundle`.                |
-| `npm run build:watch` | Build, rebuilding on source file changes.       |
-| `npm start`           | Start a dev server and open in browser.         |
+Command               | Purpose
+:-------------------- | :----------------------------------------------
+`npm run init`        | Remove Barebones examples and references.
+`npm run lint:js`     | Lint JS (see `eslintConfig` in `package.json`).
+`npm run lint:js:fix` | Lint JS and automatically fix issues.
+`npm run lint:css`    | Lint CSS (see `stylelint` in `package.json`).
+`npm run clean`       | Delete `/bundle`.
+`npm run build`       | Compile JS and CSS to `/bundle`.
+`npm run build:watch` | Build, rebuilding on source file changes.
+`npm start`           | Start a dev server and open in browser.
 
 ## Tips
 
