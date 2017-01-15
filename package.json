@@ -3,11 +3,11 @@
   "scripts": {
     "init": "tasks/init.sh",
     "clean": "rimraf bundle",
-    "prebuild": "npm run clean",
+    "prebuild": "yarn run clean",
     "build": "webpack --progress",
-    "build:watch": "npm run build -- --watch",
+    "build:watch": "yarn run build -- --watch",
     "lint:js": "eslint .",
-    "lint:js:fix": "npm run lint:js -- --fix",
+    "lint:js:fix": "yarn run lint:js -- --fix",
     "lint:css": "stylelint '**/*.css'",
     "start": "http-server -o"
   },

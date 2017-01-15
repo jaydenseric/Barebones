@@ -8,7 +8,7 @@ A barebones boilerplate for getting started on a bespoke front end.
 
 - Environment agnostic; setup your own backend and component templating.
 - Simple ES6 class module component architecture with some (easily removed) examples.
-- [NPM](https://npmjs.com) dependancies and tools.
+- [NPM](https://npmjs.com) and [Yarn](https://yarnpkg.com) for dependancies and tools.
 - [webpack](https://webpack.github.io) for builds.
 - ES6 via [Babel](https://babeljs.io).
 - [DOM4](https://github.com/WebReflection/dom4) polyfills modern DOM and [Animation Frames](https://html.spec.whatwg.org/multipage/webappapis.html#animation-frames) functionalities.
@@ -25,9 +25,10 @@ A barebones boilerplate for getting started on a bespoke front end.
 For development tools and building:
 
 1. Install the latest [Node.js and NPM](https://nodejs.org).
-2. Run `npm install` within the project root directory in Terminal.
-3. Run `npm run build:watch`.
-4. Run `npm start` in another tab. Tada!
+2. Install the latest [Yarn](https://yarnpkg.com/en/docs/install).
+3. Run `yarn` within the project root directory in Terminal.
+4. Run `yarn run build:watch`.
+5. Run `yarn run start` in another tab. Tada!
 
 Ensure your editor supports:
 
@@ -37,7 +38,7 @@ Ensure your editor supports:
 
 After inspecting the example components:
 
-1. Remove Barebones examples and references. Within the project directory in Terminal run `npm run init`. This script also deletes itself.
+1. Remove Barebones examples and references. Within the project directory in Terminal run `yarn run init`. This script also deletes itself.
 2. Customize the meta in `/index.html`.
 3. Customize the icons in `/content`.
 4. [Configure](https://github.com/ai/browserslist#config-file) browser support in `/browserslist` for tools such as [Autoprefixer](https://github.com/postcss/autoprefixer).
@@ -53,20 +54,20 @@ After inspecting the example components:
 
 ## Scripts
 
-Command               | Purpose
-:-------------------- | :----------------------------------------------
-`npm run init`        | Remove Barebones examples and references.
-`npm run lint:js`     | Lint JS (see `eslintConfig` in `package.json`).
-`npm run lint:js:fix` | Lint JS and automatically fix issues.
-`npm run lint:css`    | Lint CSS (see `stylelint` in `package.json`).
-`npm run clean`       | Delete `/bundle`.
-`npm run build`       | Compile JS and CSS to `/bundle`.
-`npm run build:watch` | Build, rebuilding on source file changes.
-`npm start`           | Start a dev server and open in browser.
+Command                | Purpose
+:--------------------- | :----------------------------------------------
+`yarn run init`        | Remove Barebones examples and references.
+`yarn run lint:js`     | Lint JS (see `eslintConfig` in `package.json`).
+`yarn run lint:js:fix` | Lint JS and automatically fix issues.
+`yarn run lint:css`    | Lint CSS (see `stylelint` in `package.json`).
+`yarn run clean`       | Delete `/bundle`.
+`yarn run build`       | Compile JS and CSS to `/bundle`.
+`yarn run build:watch` | Build, rebuilding on source file changes.
+`yarn run start`       | Start a dev server and open in browser.
 
 ## Tips
 
-- Use NPM to manage 3rd party dependencies.
+- Use [NPM](https://www.npmjs.com) with [Yarn](https://yarnpkg.com) to manage 3rd party dependencies.
 - Avoid adding already minified assets for better sourcemap assisted debugging.
 - Use [JSDoc](http://usejsdoc.org) when writing JS.
 - Don't vendor prefix CSS rules that are on a standards track; [Autoprefixer](https://github.com/postcss/autoprefixer) will take care of it.
