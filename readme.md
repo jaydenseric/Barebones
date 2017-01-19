@@ -7,15 +7,15 @@
 A barebones boilerplate for getting started on a bespoke front end.
 
 - Environment agnostic; setup your own backend and component templating.
-- Simple ES6 class module component architecture with some (easily removed) examples.
+- A minimalist component architecture with some (easily removed) examples.
 - [NPM](https://npmjs.com) and [Yarn](https://yarnpkg.com) for dependancies and tools.
 - [webpack](https://webpack.github.io) for builds.
-- ES6 via [Babel](https://babeljs.io).
+- ES6 via [Babel](https://babeljs.io). [babel-preset-env](https://github.com/babel/babel-preset-env) applies only the nessesary transforms for your level of browser support.
 - [DOM4](https://github.com/WebReflection/dom4) polyfills modern DOM and [Animation Frames](https://html.spec.whatwg.org/multipage/webappapis.html#animation-frames) functionalities.
 - JS linting with [ESLint](http://eslint.org) and [extended](https://github.com/jaydenseric/eslint-config-barebones) [JavaScript Standard Style](http://standardjs.com) config. A handy fix script can correct most issues across the entire project.
 - CSS linting with [stylelint](http://stylelint.io) and [extended](https://github.com/jaydenseric/stylelint-config-barebones) [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard) config.
 - [PostCSS](https://github.com/postcss/postcss), [CSSNext](http://cssnext.io) and [Autoprefixer](https://github.com/postcss/autoprefixer) take care of vendor prefixes and allow cutting edge CSS syntax. A faster, standards aligned alternative to preprocessors such as Sass.
-- Handle icons the modern way with polyfilled [SVG symbols and external references](https://css-tricks.com/svg-use-with-external-reference-take-2).
+- Handle icons the modern way with [polyfilled](https://github.com/Keyamoon/svgxuse) [SVG symbols and external references](https://icomoon.io/#docs/inline-svg).
 - Includes [http-server](https://github.com/indexzero/http-server) as an optional zero-config dev server.
 - Browser support: [> 2% in AU](http://browserl.ist/?q=%3E+2%25+in+AU).
 - [MIT license](https://en.wikipedia.org/wiki/MIT_License).
@@ -41,7 +41,7 @@ After inspecting the example components:
 1. Remove Barebones examples and references. Within the project directory in Terminal run `yarn run init`. This script also deletes itself.
 2. Customize the meta in `/index.html`.
 3. Customize the icons in `/content`.
-4. [Configure](https://github.com/ai/browserslist#config-file) browser support in `/browserslist` for tools such as [Autoprefixer](https://github.com/postcss/autoprefixer).
+4. Customize the [Browserslist](https://github.com/ai/browserslist) browser support queries in `/package.json` for build tools.
 5. Edit `/readme.md` to be about your project.
 6. Re-run the build and start scripts. A clean slate!
 
