@@ -19,5 +19,4 @@ body {
 
 ::selection {
   background-color: color(yellow alpha(50%));
-  opacity: 0;
 }
