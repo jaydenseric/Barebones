@@ -1,9 +1,5 @@
-const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const atImport = require('postcss-import')
-const cssnext = require('postcss-cssnext')
-const reporter = require('postcss-reporter')
 
 module.exports = {
   entry: [
@@ -11,34 +7,48 @@ module.exports = {
     './components/app/index.css'
   ],
   output: {
-    path: path.resolve('./bundle'),
+    path: './bundle',
     filename: 'bundle.js'
   },
   devtool: 'source-map',
   module: {
-    loaders: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: 'babel?cacheDirectory'
-    }, {
-      test: /\.css$/,
-      loader: ExtractTextPlugin.extract('style', 'css?sourceMap&-autoprefixer&importLoaders=1!postcss')
-    }]
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        options: {
+          cacheDirectory: true
+        }
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: [
+            {
+              loader: 'css-loader',
+              query: {
+                importLoaders: 1,
+                sourceMap: true
+              }
+            },
+            {
+              loader: 'postcss-loader'
+            }
+          ]
+        })
+      }
+    ]
   },
   plugins: [
     new webpack.ProvidePlugin({
-      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+      'fetch': 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch'
     }),
     new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
+      comments: false,
+      sourceMap: true
     }),
     new ExtractTextPlugin('bundle.css')
-  ],
-  postcss: [
-    atImport,
-    cssnext,
-    reporter({clearMessages: true})
   ]
 }
